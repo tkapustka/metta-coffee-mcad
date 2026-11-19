@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Metta Coffee</title>
+
+  <!-- Adobe Fonts kit: FreightNeo Pro (freight-neo-pro)
+       TODO before hosting on GitHub Pages: add the github.io domain to this kit
+       at fonts.adobe.com, or switch to a font you can host yourself. -->
+
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+  <link rel="stylesheet" href="https://use.typekit.net/vyh5vho.css">
+  <!-- Open Sans: used by the drink cards' hover and back states -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    /* Apply the saved theme before the page paints (no flash). Default: the visitor's system setting. */
+    (function () {
+      try {
+        var t = localStorage.getItem("metta-theme");
+        if (!t && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) t = "dark";
+        if (t === "dark") document.documentElement.dataset.theme = "dark";
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body class="page-contact">
+  <header class="site-header">
+    <div class="site-header__panel">
+      <div class="site-header__bar">
+        <a class="site-header__logo" href="index.html"><img src="assets/metta-logo.png" alt="Metta Coffee home" width="98" height="98"></a>
+        <nav aria-label="Main">
+          <ul class="site-header__pills">
+            <li><button class="nav-pill nav-pill--wander" type="button" aria-expanded="false" aria-controls="wander-menu">Wander</button></li>
+            <li><a class="nav-pill nav-pill--makers" href="makers.html">Makers</a></li>
+            <li><a class="nav-pill nav-pill--menu" href="cafe-menu.html">Cafe Menu</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="site-header__menu" id="wander-menu" hidden>
+        <ul class="site-header__extra">
+          <li><a class="nav-pill nav-pill--makers" href="makers.html">Makers</a></li>
+          <li><a class="nav-pill nav-pill--menu" href="cafe-menu.html">Cafe Menu</a></li>
+        </ul>
+        <ul class="site-header__cards">
+            <li><a class="wander-card wander-card--beans" href="beans.html"><img src="assets/nav-beans.svg" alt="" width="115" height="156"><span>Beans</span></a></li>
+            <li><a class="wander-card wander-card--events" href="events.html"><img src="assets/nav-events.svg" alt="" width="198" height="115"><span>Events</span></a></li>
+            <li><a class="wander-card wander-card--story" href="about.html"><img src="assets/nav-story.svg" alt="" width="182" height="172"><span>Our Story</span></a></li>
+            <li><a class="wander-card wander-card--contact" href="contact.html" aria-current="page"><img src="assets/nav-contact.svg" alt="" width="155" height="108"><span>Contact</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-hero" aria-labelledby="contact-title">
+      <h1 class="contact-hero__title" id="contact-title"><small>Let Us Know</small> <em>Contact Us</em></h1>
+      <p class="contact-hero__text">Have a question about our roasts, visiting the cafe inside Avant Garden, or collaborating with us? Drop us a note below and our team will get back to you shortly.</p>
+    </section>
+
+    <form class="contact-form" novalidate aria-label="Contact Metta Coffee">
+      <div class="contact-form__fields">
+        <div class="contact-form__row">
+          <div class="contact-field"><input class="contact-field__input" id="ct-name" name="name" placeholder="John smith" autocomplete="name" required><label class="contact-field__label" for="ct-name">Name</label></div>
+          <div class="contact-field"><input class="contact-field__input" id="ct-email" name="email" type="email" placeholder="JSmith@MettaCoffee.com" autocomplete="email" required><label class="contact-field__label" for="ct-email">Email</label></div>
+        </div>
+        <div class="contact-field contact-field--subject"><input class="contact-field__input" id="ct-subject" name="subject" placeholder="Your Coffee is Amazing"><label class="contact-field__label" for="ct-subject">Subject</label></div>
+        <div class="contact-field contact-field--message"><textarea class="contact-field__textarea" id="ct-message" name="message" placeholder="Type your message here..." required></textarea><label class="contact-field__label" for="ct-message">Message</label></div>
+        <div class="contact-form__actions"><button class="btn-solid" type="submit">Submit Message</button></div>
+      </div>
+      <p class="contact-form__thanks" role="status" hidden>Thanks for reaching out! We&rsquo;ll get back to you shortly.</p>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <nav class="site-footer__nav" aria-label="Footer">
+        <ul>
+          <li style="--cx:92"><a href="makers.html">Makers</a></li>
+          <li style="--cx:425.5"><a href="cafe-menu.html">Cafe Menu</a></li>
+          <li style="--cx:750"><a href="beans.html">Beans</a></li>
+          <li style="--cx:1054"><a href="events.html">Events</a></li>
+          <li style="--cx:1359"><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <p class="site-footer__wordmark" aria-hidden="true">Metta Coffee</p>
+      <p class="site-footer__copy">© Metta Coffee 2026</p>
+      <button class="site-footer__credit" type="button" aria-expanded="false" aria-controls="site-credit">Site Credit</button>
+      <button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Dark mode">
+        <svg viewBox="0 0 169.71 78.71" aria-hidden="true">
+          <rect class="tt-track" x="18.66" y="18.14" width="151" height="42.71" rx="21.35"/>
+          <g class="tt-cup">
+            <circle class="tt-body" cx="39.36" cy="39.36" r="38.36"/>
+            <circle class="tt-body" cx="39.36" cy="39.36" r="25.55"/>
+            <circle class="tt-coffee" cx="39.36" cy="39.36" r="20.9"/>
+            <path class="tt-shine" d="M24.39 39.36C24.39 31.09 31.09 24.39 39.36 24.39"/>
+            <path class="tt-handle tt-body" d="M64.91 36.24H82.97V42.47H64.91Z"/>
+          </g>
+        </svg>
+      </button>
+    </div>
+  </footer>
+  <aside class="site-credit" id="site-credit" aria-label="Site credit" hidden>
+    <div class="site-credit__bar">
+      <div class="site-credit__inner">
+        <p class="site-credit__text">Site designed, illustrated &amp; developed by Tyler Kapustka</p>
+        <a class="site-credit__cta" href="https://www.tylerkapustka.com/" target="_blank" rel="noopener">Visibly Vector Design</a>
+        <button class="site-credit__close" type="button" aria-label="Close site credit">X</button>
+      </div>
+    </div>
+  </aside>
+
+  <script src="site.js"></script>
+  <script>
+    /* ---------- Contact form (no backend yet: validate, then confirm) ---------- */
+    (() => {
+      const form = document.querySelector(".contact-form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        form.querySelector(".contact-form__fields").hidden = true;
+        const thanks = form.querySelector(".contact-form__thanks");
+        thanks.hidden = false;
+        thanks.setAttribute("tabindex", "-1");
+        thanks.focus();
+      });
+    })();
+  </script>
+</body>
+</html>

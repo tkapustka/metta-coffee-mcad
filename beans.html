@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beans | Metta Coffee</title>
+
+  <!-- Adobe Fonts kit: FreightNeo Pro (freight-neo-pro)
+       TODO before hosting on GitHub Pages: add the github.io domain to this kit
+       at fonts.adobe.com, or switch to a font you can host yourself. -->
+
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+  <link rel="stylesheet" href="https://use.typekit.net/vyh5vho.css">
+  <!-- Open Sans: used by the drink cards' hover and back states -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Open+Sans:wght@400;600;700&display=swap">
+
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    /* Apply the saved theme before the page paints (no flash). Default: the visitor's system setting. */
+    (function () {
+      try {
+        var t = localStorage.getItem("metta-theme");
+        if (!t && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) t = "dark";
+        if (t === "dark") document.documentElement.dataset.theme = "dark";
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body class="page-beans">
+  <header class="site-header">
+    <div class="site-header__panel">
+      <div class="site-header__bar">
+        <a class="site-header__logo" href="index.html"><img src="assets/metta-logo.png" alt="Metta Coffee home" width="98" height="98"></a>
+        <nav aria-label="Main">
+          <ul class="site-header__pills">
+            <li><button class="nav-pill nav-pill--wander" type="button" aria-expanded="false" aria-controls="wander-menu">Wander</button></li>
+            <li><a class="nav-pill nav-pill--makers" href="makers.html">Makers</a></li>
+            <li><a class="nav-pill nav-pill--menu" href="cafe-menu.html">Cafe Menu</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="site-header__menu" id="wander-menu" hidden>
+        <ul class="site-header__extra">
+          <li><a class="nav-pill nav-pill--makers" href="makers.html">Makers</a></li>
+          <li><a class="nav-pill nav-pill--menu" href="cafe-menu.html">Cafe Menu</a></li>
+        </ul>
+        <ul class="site-header__cards">
+            <li><a class="wander-card wander-card--beans" href="beans.html" aria-current="page"><img src="assets/nav-beans.svg" alt="" width="115" height="156"><span>Beans</span></a></li>
+            <li><a class="wander-card wander-card--events" href="events.html"><img src="assets/nav-events.svg" alt="" width="198" height="115"><span>Events</span></a></li>
+            <li><a class="wander-card wander-card--story" href="about.html"><img src="assets/nav-story.svg" alt="" width="182" height="172"><span>Our Story</span></a></li>
+            <li><a class="wander-card wander-card--contact" href="contact.html"><img src="assets/nav-contact.svg" alt="" width="155" height="108"><span>Contact</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="beans-top">
+      <section class="beans-hero" aria-labelledby="beans-title">
+        <h1 class="beans-hero__title" id="beans-title">Micro-Batch Roasts &amp; <em>Single-Origin Beans</em></h1>
+        <p class="beans-hero__text">Hand-roasted in small, intentional micro-batches since 2014, our single-origin coffees and signature blends are crafted to bring the warmth of Metta straight to your morning routine.</p>
+      </section>
+        <div class="bean-card">
+        <div class="bean-card__media"><img src="assets/nav-beans.svg" alt="" width="100" height="136"></div>
+        <h3 class="bean-card__name">Community Blend</h3>
+        <p class="bean-card__origins">Sumatran, Brazilian, Colombian &amp; Mexican</p>
+        <ul class="bean-card__notes" aria-label="Tasting notes">
+          <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Sweetness</span></li>
+          <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Acidity</span></li>
+        </ul>
+        <div class="roast-meter" style="--roast: 0.5" role="img" aria-label="Roast level: medium"></div>
+        <p class="bean-card__roast">Medium Roast</p>
+        <a class="bean-card__buy" href="#">Buy beans</a>
+      </div>
+      <ul class="beans-row" aria-label="Our beans">
+          <li class="bean-card">
+            <div class="bean-card__media"><img src="assets/nav-beans.svg" alt="" width="100" height="136"></div>
+            <h3 class="bean-card__name">Community Blend</h3>
+            <p class="bean-card__origins">Sumatran, Brazilian, Colombian &amp; Mexican</p>
+            <ul class="bean-card__notes" aria-label="Tasting notes">
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Sweetness</span></li>
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Acidity</span></li>
+            </ul>
+            <div class="roast-meter" style="--roast: 0.5" role="img" aria-label="Roast level: medium"></div>
+            <p class="bean-card__roast">Medium Roast</p>
+            <a class="bean-card__buy" href="#">Buy beans</a>
+          </li>
+          <li class="bean-card">
+            <div class="bean-card__media"><img src="assets/nav-beans.svg" alt="" width="100" height="136"></div>
+            <h3 class="bean-card__name">Community Blend</h3>
+            <p class="bean-card__origins">Sumatran, Brazilian, Colombian &amp; Mexican</p>
+            <ul class="bean-card__notes" aria-label="Tasting notes">
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Sweetness</span></li>
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Acidity</span></li>
+            </ul>
+            <div class="roast-meter" style="--roast: 0.5" role="img" aria-label="Roast level: medium"></div>
+            <p class="bean-card__roast">Medium Roast</p>
+            <a class="bean-card__buy" href="#">Buy beans</a>
+          </li>
+          <li class="bean-card">
+            <div class="bean-card__media"><img src="assets/nav-beans.svg" alt="" width="100" height="136"></div>
+            <h3 class="bean-card__name">Community Blend</h3>
+            <p class="bean-card__origins">Sumatran, Brazilian, Colombian &amp; Mexican</p>
+            <ul class="bean-card__notes" aria-label="Tasting notes">
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Sweetness</span></li>
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Acidity</span></li>
+            </ul>
+            <div class="roast-meter" style="--roast: 0.5" role="img" aria-label="Roast level: medium"></div>
+            <p class="bean-card__roast">Medium Roast</p>
+            <a class="bean-card__buy" href="#">Buy beans</a>
+          </li>
+          <li class="bean-card">
+            <div class="bean-card__media"><img src="assets/nav-beans.svg" alt="" width="100" height="136"></div>
+            <h3 class="bean-card__name">Community Blend</h3>
+            <p class="bean-card__origins">Sumatran, Brazilian, Colombian &amp; Mexican</p>
+            <ul class="bean-card__notes" aria-label="Tasting notes">
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Sweetness</span></li>
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Acidity</span></li>
+            </ul>
+            <div class="roast-meter" style="--roast: 0.5" role="img" aria-label="Roast level: medium"></div>
+            <p class="bean-card__roast">Medium Roast</p>
+            <a class="bean-card__buy" href="#">Buy beans</a>
+          </li>
+      </ul>
+    </div>
+
+    <section class="ordering" aria-labelledby="ordering-title">
+      <div class="ordering__inner">
+        <h2 class="ordering__title" id="ordering-title">Ordering our blends</h2>
+        <p class="ordering__text">Small-batch roasted in Anoka to ensure peak freshness. Discover<br> our carefully sourced single-origins and comforting house blends, designed for every palate and brewing method.</p>
+        <ul class="ordering__cards">
+          <li class="size-card size-card--16oz">
+            <div class="size-card__media"><img src="assets/size-mug.svg" alt="" width="117" height="123"></div>
+            <h3 class="size-card__name">16oz Bags</h3>
+            <p class="size-card__text">These are available in<br> store as whole or ground.</p>
+            <p class="size-card__tags">Dark Light Medium Decaf Espresso Flavored</p>
+          </li>
+          <li class="size-card size-card--3lb">
+            <div class="size-card__media"><img src="assets/nav-beans.svg" alt="" width="137" height="186"></div>
+            <h3 class="size-card__name">3lb - 5lb</h3>
+            <p class="size-card__text">Bring your own container<br> and please call ahead.</p>
+            <p class="size-card__tags">Dark Light Medium Decaf Espresso Flavored</p>
+          </li>
+          <li class="size-card size-card--5lb">
+            <div class="size-card__media"><img src="assets/size-bigbag.svg" alt="" width="166" height="206"></div>
+            <h3 class="size-card__name">Over 5lb</h3>
+            <p class="size-card__text">Please email us at<br> <a href="mailto:contact@mettacoffee.com">contact@mettacoffee.com</a></p>
+            <p class="size-card__tags">Dark Light Medium Decaf Espresso Flavored</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="blends" aria-labelledby="blends-title" style="--roast: 0.887">
+      <h2 class="blends__title" id="blends-title">What kind of beans are in our blends?</h2>
+      <div class="blends__track" aria-hidden="true"><span class="blends__knob"></span></div>
+      <div class="blends__readout">
+        <p class="blends__roast">Dark Roast</p>
+        <p class="blends__mix">Sumatran: 100% Sumatran.</p>
+      </div>
+    </section>
+
+    <section class="where" aria-labelledby="where-title">
+      <figure class="where__media">
+        <img src="assets/about-roaster.jpg" alt="Freshly roasted coffee beans pouring out of a drum roaster into a cooling tray" loading="lazy">
+      </figure>
+      <div class="where__text">
+        <h2 class="where__title" id="where-title">Where do we get our beans?</h2>
+        <p class="where__body">We roast all of our coffee beans in Coon Rapids, MN in hand-roasted micro-batches. We purchase beans from Cafe Imports who make it their mission to bring the highest-quality green coffees in the world by sourcing, developing, and innovating at origin, while empowering farmers with price, traceability, and long-term partnerships. We fully believe that they incorporate the idea of Metta and what we want to put into the world.</p>
+        <a class="btn-outline" href="about.html">Learn About Us</a>
+      </div>
+    </section>
+
+    <section class="origins" aria-labelledby="origins-title">
+      <h2 class="origins__title" id="origins-title">What kind of coffee beans do we use?</h2>
+      <div class="origins__stage" aria-roledescription="carousel">
+        <ul class="origins__cards">
+          <li class="origin-card" data-slot="0" id="origin-brazilian">
+            <img src="assets/origin-brazilian.svg" alt="" style="left:38.00px; top:62.04px; width:161.04px; height:157.18px">
+            <h3 class="origin-card__name">Brazilian</h3>
+            <p class="origin-card__text" style="--tw:346px">From various farms in Brazil, this coffee creates a clean and sweet flavor with a citric lemon acidity and a salted peanut nuttiness.</p>
+          </li>
+          <li class="origin-card" data-slot="1" id="origin-columbian" aria-hidden="true">
+            <img src="assets/origin-columbian.svg" alt="" style="left:36.78px; top:104.83px; width:130.26px; height:92.02px">
+            <h3 class="origin-card__name">Columbian</h3>
+            <p class="origin-card__text" style="--tw:346px">From various smallholder farmers in Columbia, this coffee is tart with cherry flavors.</p>
+          </li>
+          <li class="origin-card" data-slot="2" id="origin-ethiopian" aria-hidden="true">
+            <img src="assets/origin-ethiopian.svg" alt="" style="left:24.64px; top:82.73px; width:131.67px; height:121.46px">
+            <h3 class="origin-card__name">Ethiopian</h3>
+            <p class="origin-card__text" style="--tw:388px">From Tega and Tula Coffee Farm, this certified organic coffee offers Washed and Natural varieties with full block-level traceability. It features a mild, savory flavor profile with citric acidity and cocoa notes.</p>
+          </li>
+          <li class="origin-card" data-slot="3" id="origin-mexican" aria-hidden="true">
+            <img src="assets/origin-mexican.svg" alt="" style="left:38.00px; top:83.04px; width:101.00px; height:137.90px">
+            <h3 class="origin-card__name">Mexican</h3>
+            <p class="origin-card__text" style="--tw:393px">Mild and affordable, these versatile coffees work well as blend components or as clean, easy-drinking single-origin options. Sourced from various smallholders, they offer a savory profile with salted peanut notes.</p>
+          </li>
+          <li class="origin-card" data-slot="4" id="origin-sumatra" aria-hidden="true">
+            <img src="assets/origin-sumatra.svg" alt="" style="left:38.04px; top:85.02px; width:115.61px; height:124.53px">
+            <h3 class="origin-card__name">Sumatra</h3>
+            <p class="origin-card__text" style="--tw:376px">From various smallholder farmers in Aceh, Indonesia, this coffee delivers classic Sumatran traits with a sweet, clean profile, balancing earthiness, herbaceousness, tart cranberry, and savory notes.</p>
+          </li>
+        </ul>
+        <button class="origins__arrow origins__arrow--prev" type="button" aria-label="Previous origin"><svg viewBox="0 0 40.74 40.74" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M40.74 20.37 20.38 0l-2 2 18.37 18.37L18.38 38.74l2 2L40.74 20.37Z"/><path fill="currentColor" fill-rule="evenodd" d="M38.73 18.94H0v2.83h38.73v-2.83Z"/></svg></button>
+        <button class="origins__arrow origins__arrow--next" type="button" aria-label="Next origin"><svg viewBox="0 0 40.74 40.74" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M40.74 20.37 20.38 0l-2 2 18.37 18.37L18.38 38.74l2 2L40.74 20.37Z"/><path fill="currentColor" fill-rule="evenodd" d="M38.73 18.94H0v2.83h38.73v-2.83Z"/></svg></button>
+        <p class="visually-hidden" aria-live="polite" data-origins-status></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <nav class="site-footer__nav" aria-label="Footer">
+        <ul>
+          <li style="--cx:92"><a href="makers.html">Makers</a></li>
+          <li style="--cx:425.5"><a href="cafe-menu.html">Cafe Menu</a></li>
+          <li style="--cx:750"><a href="beans.html" aria-current="page">Beans</a></li>
+          <li style="--cx:1054"><a href="events.html">Events</a></li>
+          <li style="--cx:1359"><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <p class="site-footer__wordmark" aria-hidden="true">Metta Coffee</p>
+      <p class="site-footer__copy">© Metta Coffee 2026</p>
+      <button class="site-footer__credit" type="button" aria-expanded="false" aria-controls="site-credit">Site Credit</button>
+      <button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Dark mode">
+        <svg viewBox="0 0 169.71 78.71" aria-hidden="true">
+          <rect class="tt-track" x="18.66" y="18.14" width="151" height="42.71" rx="21.35"/>
+          <g class="tt-cup">
+            <circle class="tt-body" cx="39.36" cy="39.36" r="38.36"/>
+            <circle class="tt-body" cx="39.36" cy="39.36" r="25.55"/>
+            <circle class="tt-coffee" cx="39.36" cy="39.36" r="20.9"/>
+            <path class="tt-shine" d="M24.39 39.36C24.39 31.09 31.09 24.39 39.36 24.39"/>
+            <path class="tt-handle tt-body" d="M64.91 36.24H82.97V42.47H64.91Z"/>
+          </g>
+        </svg>
+      </button>
+    </div>
+  </footer>
+  <aside class="site-credit" id="site-credit" aria-label="Site credit" hidden>
+    <div class="site-credit__bar">
+      <div class="site-credit__inner">
+        <p class="site-credit__text">Site designed, illustrated &amp; developed by Tyler Kapustka</p>
+        <a class="site-credit__cta" href="https://www.tylerkapustka.com/" target="_blank" rel="noopener">Visibly Vector Design</a>
+        <button class="site-credit__close" type="button" aria-label="Close site credit">X</button>
+      </div>
+    </div>
+  </aside>
+
+  <script src="site.js"></script>
+  <script>
+    /* ---------- Ordering our blends: slide the size cards in ---------- */
+    (() => {
+      const band = document.querySelector(".ordering");
+      if (!("IntersectionObserver" in window)) { band.classList.add("is-in"); return; }
+      new IntersectionObserver((entries, obs) => {
+        if (entries.some((e) => e.isIntersecting)) { band.classList.add("is-in"); obs.disconnect(); }
+      }, { threshold: 0.45 }).observe(band);
+    })();
+
+    /* ---------- Origins carousel: rotate which card is in front ---------- */
+    (() => {
+      const root = document.querySelector(".origins__stage");
+      const cards = [...root.querySelectorAll(".origin-card")];
+      const status = root.querySelector("[data-origins-status]");
+      let front = 0;
+      const render = () => {
+        cards.forEach((card, i) => {
+          const slot = (i - front + cards.length) % cards.length;
+          card.dataset.slot = slot;
+          card.toggleAttribute("aria-hidden", slot !== 0);
+        });
+        status.textContent = cards[front].querySelector(".origin-card__name").textContent;
+      };
+      const go = (n) => { front = (n + cards.length) % cards.length; render(); };
+      root.querySelector(".origins__arrow--prev").addEventListener("click", () => go(front - 1));
+      root.querySelector(".origins__arrow--next").addEventListener("click", () => go(front + 1));
+      cards.forEach((card, i) => card.addEventListener("click", () => go(i)));   // click a card behind to bring it forward
+      render();
+      status.textContent = "";
+    })();
+  </script>
+</body>
+</html>

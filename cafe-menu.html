@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cafe Menu | Metta Coffee</title>
+
+  <!-- Adobe Fonts kit: FreightNeo Pro (freight-neo-pro)
+       TODO before hosting on GitHub Pages: add the github.io domain to this kit
+       at fonts.adobe.com, or switch to a font you can host yourself. -->
+
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+  <link rel="stylesheet" href="https://use.typekit.net/vyh5vho.css">
+  <!-- Open Sans: used by the drink cards' hover and back states -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Open+Sans:wght@400;600;700&display=swap">
+
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    /* Apply the saved theme before the page paints (no flash). Default: the visitor's system setting. */
+    (function () {
+      try {
+        var t = localStorage.getItem("metta-theme");
+        if (!t && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) t = "dark";
+        if (t === "dark") document.documentElement.dataset.theme = "dark";
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body class="page-menu">
+  <header class="site-header">
+    <div class="site-header__panel">
+      <div class="site-header__bar">
+        <a class="site-header__logo" href="index.html"><img src="assets/metta-logo.png" alt="Metta Coffee home" width="98" height="98"></a>
+        <nav aria-label="Main">
+          <ul class="site-header__pills">
+            <li><button class="nav-pill nav-pill--wander" type="button" aria-expanded="false" aria-controls="wander-menu">Wander</button></li>
+            <li><a class="nav-pill nav-pill--makers" href="makers.html">Makers</a></li>
+            <li><a class="nav-pill nav-pill--menu" href="cafe-menu.html" aria-current="page">Cafe Menu</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="site-header__menu" id="wander-menu" hidden>
+        <ul class="site-header__extra">
+          <li><a class="nav-pill nav-pill--makers" href="makers.html">Makers</a></li>
+          <li><a class="nav-pill nav-pill--menu" href="cafe-menu.html" aria-current="page">Cafe Menu</a></li>
+        </ul>
+        <ul class="site-header__cards">
+            <li><a class="wander-card wander-card--beans" href="beans.html"><img src="assets/nav-beans.svg" alt="" width="115" height="156"><span>Beans</span></a></li>
+            <li><a class="wander-card wander-card--events" href="events.html"><img src="assets/nav-events.svg" alt="" width="198" height="115"><span>Events</span></a></li>
+            <li><a class="wander-card wander-card--story" href="about.html"><img src="assets/nav-story.svg" alt="" width="182" height="172"><span>Our Story</span></a></li>
+            <li><a class="wander-card wander-card--contact" href="contact.html"><img src="assets/nav-contact.svg" alt="" width="155" height="108"><span>Contact</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="menu-hero" aria-labelledby="menu-title">
+      <h1 class="menu-hero__title" id="menu-title">Sips, Roasts &amp; <em>Daily Offerings</em></h1>
+      <p class="menu-hero__text">Hand-poured espresso, ceremonial-grade matchas, and loose-leaf teas—brewed fresh daily inside Avant Garden.</p>
+      <div class="menu-filter" role="tablist" aria-label="Menu categories">
+        <button class="menu-filter__tab menu-filter__tab--coffee" type="button" role="tab" id="tab-coffee" aria-controls="panel-coffee" aria-selected="true">Coffee</button>
+        <button class="menu-filter__tab menu-filter__tab--matcha" type="button" role="tab" id="tab-matcha" aria-controls="panel-matcha" aria-selected="false" tabindex="-1">Matcha</button>
+        <button class="menu-filter__tab menu-filter__tab--tea" type="button" role="tab" id="tab-tea" aria-controls="panel-tea" aria-selected="false" tabindex="-1">Tea</button>
+        <button class="menu-filter__tab menu-filter__tab--baked" type="button" role="tab" id="tab-baked" aria-controls="panel-baked" aria-selected="false" tabindex="-1">Baked Goods</button>
+      </div>
+    </section>
+
+    <section class="menu-panel" id="panel-coffee" role="tabpanel" aria-labelledby="tab-coffee">
+      <ul class="menu-grid">
+          <li class="menu-card">
+            <img class="menu-card__art" src="assets/drink-snickerdoodle-menu.svg" alt="" width="119" height="149">
+            <h3 class="menu-card__name">Snickerdoodle</h3>
+            <hr class="menu-card__rule">
+            <p class="menu-card__desc">Dark Chocolate, Caramel, Hazelnut, Vanilla, Espresso, Steamed Milk &amp; Whipped Cream with Chocolate and Caramel Drizzle.</p>
+            <ul class="menu-card__notes" aria-label="Flavor notes">
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Sweet</span></li>
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Salty</span></li>
+            </ul>
+          </li>
+          <li class="menu-card">
+            <img class="menu-card__art" src="assets/drink-snickerdoodle-menu.svg" alt="" width="119" height="149">
+            <h3 class="menu-card__name">Snickerdoodle</h3>
+            <hr class="menu-card__rule">
+            <p class="menu-card__desc">Dark Chocolate, Caramel, Hazelnut, Vanilla, Espresso, Steamed Milk &amp; Whipped Cream with Chocolate and Caramel Drizzle.</p>
+            <ul class="menu-card__notes" aria-label="Flavor notes">
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Sweet</span></li>
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Salty</span></li>
+            </ul>
+          </li>
+          <li class="menu-card">
+            <img class="menu-card__art" src="assets/drink-snickerdoodle-menu.svg" alt="" width="119" height="149">
+            <h3 class="menu-card__name">Snickerdoodle</h3>
+            <hr class="menu-card__rule">
+            <p class="menu-card__desc">Dark Chocolate, Caramel, Hazelnut, Vanilla, Espresso, Steamed Milk &amp; Whipped Cream with Chocolate and Caramel Drizzle.</p>
+            <ul class="menu-card__notes" aria-label="Flavor notes">
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Sweet</span></li>
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Salty</span></li>
+            </ul>
+          </li>
+          <li class="menu-card">
+            <img class="menu-card__art" src="assets/drink-snickerdoodle-menu.svg" alt="" width="119" height="149">
+            <h3 class="menu-card__name">Snickerdoodle</h3>
+            <hr class="menu-card__rule">
+            <p class="menu-card__desc">Dark Chocolate, Caramel, Hazelnut, Vanilla, Espresso, Steamed Milk &amp; Whipped Cream with Chocolate and Caramel Drizzle.</p>
+            <ul class="menu-card__notes" aria-label="Flavor notes">
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Sweet</span></li>
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Salty</span></li>
+            </ul>
+          </li>
+          <li class="menu-card">
+            <img class="menu-card__art" src="assets/drink-snickerdoodle-menu.svg" alt="" width="119" height="149">
+            <h3 class="menu-card__name">Snickerdoodle</h3>
+            <hr class="menu-card__rule">
+            <p class="menu-card__desc">Dark Chocolate, Caramel, Hazelnut, Vanilla, Espresso, Steamed Milk &amp; Whipped Cream with Chocolate and Caramel Drizzle.</p>
+            <ul class="menu-card__notes" aria-label="Flavor notes">
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Sweet</span></li>
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Salty</span></li>
+            </ul>
+          </li>
+          <li class="menu-card">
+            <img class="menu-card__art" src="assets/drink-snickerdoodle-menu.svg" alt="" width="119" height="149">
+            <h3 class="menu-card__name">Snickerdoodle</h3>
+            <hr class="menu-card__rule">
+            <p class="menu-card__desc">Dark Chocolate, Caramel, Hazelnut, Vanilla, Espresso, Steamed Milk &amp; Whipped Cream with Chocolate and Caramel Drizzle.</p>
+            <ul class="menu-card__notes" aria-label="Flavor notes">
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Sweet</span></li>
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Salty</span></li>
+            </ul>
+          </li>
+          <li class="menu-card">
+            <img class="menu-card__art" src="assets/drink-snickerdoodle-menu.svg" alt="" width="119" height="149">
+            <h3 class="menu-card__name">Snickerdoodle</h3>
+            <hr class="menu-card__rule">
+            <p class="menu-card__desc">Dark Chocolate, Caramel, Hazelnut, Vanilla, Espresso, Steamed Milk &amp; Whipped Cream with Chocolate and Caramel Drizzle.</p>
+            <ul class="menu-card__notes" aria-label="Flavor notes">
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Sweet</span></li>
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Salty</span></li>
+            </ul>
+          </li>
+          <li class="menu-card">
+            <img class="menu-card__art" src="assets/drink-snickerdoodle-menu.svg" alt="" width="119" height="149">
+            <h3 class="menu-card__name">Snickerdoodle</h3>
+            <hr class="menu-card__rule">
+            <p class="menu-card__desc">Dark Chocolate, Caramel, Hazelnut, Vanilla, Espresso, Steamed Milk &amp; Whipped Cream with Chocolate and Caramel Drizzle.</p>
+            <ul class="menu-card__notes" aria-label="Flavor notes">
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Sweet</span></li>
+              <li><img src="assets/bean-flavor.svg" alt="" width="43" height="35"><span>Salty</span></li>
+            </ul>
+          </li>
+      </ul>
+    </section>
+    <section class="menu-panel" id="panel-matcha" role="tabpanel" aria-labelledby="tab-matcha" hidden>
+      <p class="menu-empty">Our matcha menu is coming soon.</p>
+    </section>
+    <section class="menu-panel" id="panel-tea" role="tabpanel" aria-labelledby="tab-tea" hidden>
+      <p class="menu-empty">Our tea menu is coming soon.</p>
+    </section>
+    <section class="menu-panel" id="panel-baked" role="tabpanel" aria-labelledby="tab-baked" hidden>
+      <p class="menu-empty">Our baked goods menu is coming soon.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <nav class="site-footer__nav" aria-label="Footer">
+        <ul>
+          <li style="--cx:92"><a href="makers.html">Makers</a></li>
+          <li style="--cx:425.5"><a href="cafe-menu.html" aria-current="page">Cafe Menu</a></li>
+          <li style="--cx:750"><a href="beans.html">Beans</a></li>
+          <li style="--cx:1054"><a href="events.html">Events</a></li>
+          <li style="--cx:1359"><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <p class="site-footer__wordmark" aria-hidden="true">Metta Coffee</p>
+      <p class="site-footer__copy">© Metta Coffee 2026</p>
+      <button class="site-footer__credit" type="button" aria-expanded="false" aria-controls="site-credit">Site Credit</button>
+      <button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Dark mode">
+        <svg viewBox="0 0 169.71 78.71" aria-hidden="true">
+          <rect class="tt-track" x="18.66" y="18.14" width="151" height="42.71" rx="21.35"/>
+          <g class="tt-cup">
+            <circle class="tt-body" cx="39.36" cy="39.36" r="38.36"/>
+            <circle class="tt-body" cx="39.36" cy="39.36" r="25.55"/>
+            <circle class="tt-coffee" cx="39.36" cy="39.36" r="20.9"/>
+            <path class="tt-shine" d="M24.39 39.36C24.39 31.09 31.09 24.39 39.36 24.39"/>
+            <path class="tt-handle tt-body" d="M64.91 36.24H82.97V42.47H64.91Z"/>
+          </g>
+        </svg>
+      </button>
+    </div>
+  </footer>
+  <aside class="site-credit" id="site-credit" aria-label="Site credit" hidden>
+    <div class="site-credit__bar">
+      <div class="site-credit__inner">
+        <p class="site-credit__text">Site designed, illustrated &amp; developed by Tyler Kapustka</p>
+        <a class="site-credit__cta" href="https://www.tylerkapustka.com/" target="_blank" rel="noopener">Visibly Vector Design</a>
+        <button class="site-credit__close" type="button" aria-label="Close site credit">X</button>
+      </div>
+    </div>
+  </aside>
+
+  <script src="site.js"></script>
+  <script>
+    /* ---------- Menu category tabs ---------- */
+    (() => {
+      const tabs = [...document.querySelectorAll(".menu-filter__tab")];
+      const select = (tab, focus) => {
+        tabs.forEach((t) => {
+          const on = t === tab;
+          t.setAttribute("aria-selected", on);
+          t.tabIndex = on ? 0 : -1;
+          document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+        });
+        if (focus) tab.focus();
+      };
+      tabs.forEach((tab, i) => {
+        tab.addEventListener("click", () => select(tab));
+        tab.addEventListener("keydown", (e) => {
+          const step = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+          if (!step) return;
+          e.preventDefault();
+          select(tabs[(i + step + tabs.length) % tabs.length], true);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

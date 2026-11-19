@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | Metta Coffee</title>
+
+  <!-- Adobe Fonts kit: FreightNeo Pro (freight-neo-pro)
+       TODO before hosting on GitHub Pages: add the github.io domain to this kit
+       at fonts.adobe.com, or switch to a font you can host yourself. -->
+
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+  <link rel="stylesheet" href="https://use.typekit.net/vyh5vho.css">
+  <!-- Open Sans: used by the drink cards' hover and back states -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    /* Apply the saved theme before the page paints (no flash). Default: the visitor's system setting. */
+    (function () {
+      try {
+        var t = localStorage.getItem("metta-theme");
+        if (!t && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) t = "dark";
+        if (t === "dark") document.documentElement.dataset.theme = "dark";
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body class="page-about">
+  <header class="site-header">
+    <div class="site-header__panel">
+      <div class="site-header__bar">
+        <a class="site-header__logo" href="index.html"><img src="assets/metta-logo.png" alt="Metta Coffee home" width="98" height="98"></a>
+        <nav aria-label="Main">
+          <ul class="site-header__pills">
+            <li><button class="nav-pill nav-pill--wander" type="button" aria-expanded="false" aria-controls="wander-menu">Wander</button></li>
+            <li><a class="nav-pill nav-pill--makers" href="makers.html">Makers</a></li>
+            <li><a class="nav-pill nav-pill--menu" href="cafe-menu.html">Cafe Menu</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="site-header__menu" id="wander-menu" hidden>
+        <ul class="site-header__extra">
+          <li><a class="nav-pill nav-pill--makers" href="makers.html">Makers</a></li>
+          <li><a class="nav-pill nav-pill--menu" href="cafe-menu.html">Cafe Menu</a></li>
+        </ul>
+        <ul class="site-header__cards">
+            <li><a class="wander-card wander-card--beans" href="beans.html"><img src="assets/nav-beans.svg" alt="" width="115" height="156"><span>Beans</span></a></li>
+            <li><a class="wander-card wander-card--events" href="events.html"><img src="assets/nav-events.svg" alt="" width="198" height="115"><span>Events</span></a></li>
+            <li><a class="wander-card wander-card--story" href="about.html" aria-current="page"><img src="assets/nav-story.svg" alt="" width="182" height="172"><span>Our Story</span></a></li>
+            <li><a class="wander-card wander-card--contact" href="contact.html"><img src="assets/nav-contact.svg" alt="" width="155" height="108"><span>Contact</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="about-hero" aria-labelledby="about-title">
+      <h1 class="about-hero__title" id="about-title">Slow Down, Savor,<br> <em>&amp; Connect.</em></h1>
+      <p class="about-hero__text">Housed inside Avant Garden in historic Anoka, Metta Coffee was built as a quiet intersection of artisan craft, micro-batch roasting, and neighborhood collaboration.</p>
+      <div class="makers-photos about-photo">
+        <img class="is-active" src="assets/makers-gathering.jpg" alt="Friends laughing together over coffee at a round table in the cafe">
+      </div>
+    </section>
+
+    <section class="about-story" aria-labelledby="story-heading">
+      <h2 class="about-story__title" id="story-heading">The<br> Story<br> Behind<br> the<br> Cup</h2>
+      <div class="about-story__body">
+        <p>In Pali, ‘Metta’ translates to loving-kindness—an intentional practice of goodwill toward oneself and the surrounding community. Started by the mother-daughter duo Amber and Amanda in June 2020, Metta Coffee was born from a passion for small-batch roasting and deep neighborhood connection.</p>
+        <p>Housed inside Avant Garden in historic Anoka, our space is designed to be an active community ecosystem where coffee, art, and local creativity intersect daily. Every bag of coffee is handled in small micro-batches—with beans roasted by Amber using the mindful meditative practices she began in 2014. But what truly sets Metta apart isn&#39;t just how we roast; it&#39;s who we share the space with. By partnering with independent artists, regional makers, and creative event hosts for weekend pop-ups, workshops, and product showcases, we provide an accessible physical platform for our community to gather, share, and grow together.</p>
+      </div>
+    </section>
+
+    <section class="about-cards" aria-roledescription="carousel" aria-label="What makes Metta">
+      <ul class="about-cards__list">
+          <li class="about-card" data-slot="0">
+            <h3>Micro-Batch Roasting</h3>
+            <p>Roasted with intention, every batch is dialed in to highlight exceptional flavor profiles and origins.</p>
+          </li>
+          <li class="about-card" data-slot="1" aria-hidden="true">
+            <h3>The Space Within Avant Garden</h3>
+            <p>Nestled inside Avant Garden, our space serves as a daily gathering spot for locals, remote workers, and creative minds.</p>
+          </li>
+          <li class="about-card" data-slot="2" aria-hidden="true">
+            <h3>Community &amp; Maker Collaboration</h3>
+            <p>From in-store retail consignment shelves to weekend pop-up markets, we provide a physical platform for regional artists.</p>
+          </li>
+      </ul>
+      <div class="about-cards__arrows">
+        <button class="about-cards__arrow about-cards__arrow--prev" type="button" aria-label="Previous"><svg viewBox="0 0 40.74 40.74" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M40.74 20.37 20.38 0l-2 2 18.37 18.37L18.38 38.74l2 2L40.74 20.37Z"/><path fill="currentColor" fill-rule="evenodd" d="M38.73 18.94H0v2.83h38.73v-2.83Z"/></svg></button>
+        <button class="about-cards__arrow about-cards__arrow--next" type="button" aria-label="Next"><svg viewBox="0 0 40.74 40.74" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M40.74 20.37 20.38 0l-2 2 18.37 18.37L18.38 38.74l2 2L40.74 20.37Z"/><path fill="currentColor" fill-rule="evenodd" d="M38.73 18.94H0v2.83h38.73v-2.83Z"/></svg></button>
+      </div>
+    </section>
+
+    <p class="about-closing">Whether you&#39;re stopping by for a single-origin pour-over, browsing our retail maker shelves, or exploring our upcoming event calendar, there’s always a seat saved for you.</p>
+    <div class="about-ctas">
+      <a class="btn-light" href="index.html#visit">Plan Your Visit</a>
+      <a class="btn-light" href="makers.html">Explore Makers Space</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <nav class="site-footer__nav" aria-label="Footer">
+        <ul>
+          <li style="--cx:92"><a href="makers.html">Makers</a></li>
+          <li style="--cx:425.5"><a href="cafe-menu.html">Cafe Menu</a></li>
+          <li style="--cx:750"><a href="beans.html">Beans</a></li>
+          <li style="--cx:1054"><a href="events.html">Events</a></li>
+          <li style="--cx:1359"><a href="about.html" aria-current="page">About</a></li>
+        </ul>
+      </nav>
+      <p class="site-footer__wordmark" aria-hidden="true">Metta Coffee</p>
+      <p class="site-footer__copy">© Metta Coffee 2026</p>
+      <button class="site-footer__credit" type="button" aria-expanded="false" aria-controls="site-credit">Site Credit</button>
+      <button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Dark mode">
+        <svg viewBox="0 0 169.71 78.71" aria-hidden="true">
+          <rect class="tt-track" x="18.66" y="18.14" width="151" height="42.71" rx="21.35"/>
+          <g class="tt-cup">
+            <circle class="tt-body" cx="39.36" cy="39.36" r="38.36"/>
+            <circle class="tt-body" cx="39.36" cy="39.36" r="25.55"/>
+            <circle class="tt-coffee" cx="39.36" cy="39.36" r="20.9"/>
+            <path class="tt-shine" d="M24.39 39.36C24.39 31.09 31.09 24.39 39.36 24.39"/>
+            <path class="tt-handle tt-body" d="M64.91 36.24H82.97V42.47H64.91Z"/>
+          </g>
+        </svg>
+      </button>
+    </div>
+  </footer>
+  <aside class="site-credit" id="site-credit" aria-label="Site credit" hidden>
+    <div class="site-credit__bar">
+      <div class="site-credit__inner">
+        <p class="site-credit__text">Site designed, illustrated &amp; developed by Tyler Kapustka</p>
+        <a class="site-credit__cta" href="https://www.tylerkapustka.com/" target="_blank" rel="noopener">Visibly Vector Design</a>
+        <button class="site-credit__close" type="button" aria-label="Close site credit">X</button>
+      </div>
+    </div>
+  </aside>
+
+  <script src="site.js"></script>
+  <script>
+    /* ---------- Feature cards: rotate which card is in front ---------- */
+    (() => {
+      const cards = [...document.querySelectorAll(".about-card")];
+      let front = 0;
+      const render = () => cards.forEach((c, i) => {
+        const slot = (i - front + cards.length) % cards.length;
+        c.dataset.slot = slot;
+        c.toggleAttribute("aria-hidden", slot !== 0);
+      });
+      const go = (n) => { front = (n + cards.length) % cards.length; render(); };
+      document.querySelector(".about-cards__arrow--prev").addEventListener("click", () => go(front - 1));
+      document.querySelector(".about-cards__arrow--next").addEventListener("click", () => go(front + 1));
+      cards.forEach((c, i) => c.addEventListener("click", () => go(i)));
+    })();
+  </script>
+</body>
+</html>

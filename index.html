@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Metta Coffee</title>
+
+  <!-- Adobe Fonts kit: FreightNeo Pro (freight-neo-pro)
+       TODO before hosting on GitHub Pages: add the github.io domain to this kit
+       at fonts.adobe.com, or switch to a font you can host yourself. -->
+
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+  <link rel="stylesheet" href="https://use.typekit.net/vyh5vho.css">
+  <!-- Open Sans: used by the drink cards' hover and back states -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    /* Apply the saved theme before the page paints (no flash). Default: the visitor's system setting. */
+    (function () {
+      try {
+        var t = localStorage.getItem("metta-theme");
+        if (!t && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) t = "dark";
+        if (t === "dark") document.documentElement.dataset.theme = "dark";
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__panel">
+      <div class="site-header__bar">
+        <a class="site-header__logo" href="index.html" aria-current="page"><img src="assets/metta-logo.png" alt="Metta Coffee home" width="98" height="98"></a>
+        <nav aria-label="Main">
+          <ul class="site-header__pills">
+            <li><button class="nav-pill nav-pill--wander" type="button" aria-expanded="false" aria-controls="wander-menu">Wander</button></li>
+            <li><a class="nav-pill nav-pill--makers" href="makers.html">Makers</a></li>
+            <li><a class="nav-pill nav-pill--menu" href="cafe-menu.html">Cafe Menu</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="site-header__menu" id="wander-menu" hidden>
+        <ul class="site-header__extra">
+          <li><a class="nav-pill nav-pill--makers" href="makers.html">Makers</a></li>
+          <li><a class="nav-pill nav-pill--menu" href="cafe-menu.html">Cafe Menu</a></li>
+        </ul>
+        <ul class="site-header__cards">
+            <li><a class="wander-card wander-card--beans" href="beans.html"><img src="assets/nav-beans.svg" alt="" width="115" height="156"><span>Beans</span></a></li>
+            <li><a class="wander-card wander-card--events" href="events.html"><img src="assets/nav-events.svg" alt="" width="198" height="115"><span>Events</span></a></li>
+            <li><a class="wander-card wander-card--story" href="about.html"><img src="assets/nav-story.svg" alt="" width="182" height="172"><span>Our Story</span></a></li>
+            <li><a class="wander-card wander-card--contact" href="contact.html"><img src="assets/nav-contact.svg" alt="" width="155" height="108"><span>Contact</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <main>
+   <div class="page page--first">
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero__image" src="assets/hero-coffee.jpg"
+           alt="Four hands raising cups of latte and iced coffee together in a toast"
+           width="2700" height="1800">
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <p class="hero__watermark" aria-hidden="true">Metta Coffee</p>
+      <h1 class="hero__title" id="hero-title">
+        <span class="hero__title-accent">Crafted with</span><br>
+        Mindfulness
+      </h1>
+    </section>
+
+    <section class="about" aria-label="About Metta Coffee">
+      <p class="about__intro">Housed inside Avant Garden in historic Anoka, Metta Coffee pairs local micro-batch roasting with vibrant artisan markets, workshops, and creative pop-up spaces. Whether you’re dropping in for a pour-over or reserving space for your next showcase, we’re built to fuel your day and host your craft.</p>
+      <address class="about__visit" id="visit">
+        <p>Visit The Cafe:</p>
+        <p>Mon-Fri: 7<span class="sc">AM</span> - 5<span class="sc">PM</span></p>
+        <p>Sat: 8<span class="sc">AM</span> - 5<span class="sc">PM</span></p>
+        <p>Sun: 9<span class="sc">AM</span> - 5<span class="sc">PM</span></p>
+        <p>215 E Main Street, Anoka, MN</p>
+      </address>
+    </section>
+   </div>
+
+    <section class="banner" aria-label="Highlights">
+      <div class="banner__bar">
+        <div class="banner__track">
+          <ul class="banner__group">
+            <li>Micro-Batch Coffee Roasted in Anoka</li>
+            <li>Ethically Sourced Beans</li>
+            <li>Host for Local Makers</li>
+          </ul>
+          <ul class="banner__group" aria-hidden="true">
+            <li>Micro-Batch Coffee Roasted in Anoka</li>
+            <li>Ethically Sourced Beans</li>
+            <li>Host for Local Makers</li>
+          </ul>
+          <ul class="banner__group" aria-hidden="true">
+            <li>Micro-Batch Coffee Roasted in Anoka</li>
+            <li>Ethically Sourced Beans</li>
+            <li>Host for Local Makers</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="carousel" aria-roledescription="carousel" aria-label="Photos of Metta Coffee">
+      <figure class="carousel__card" data-slot="left" data-photo="0" aria-hidden="true"><img src="assets/carousel-latte.jpg" alt=""></figure>
+      <figure class="carousel__card" data-slot="featured" data-photo="1"><img src="assets/carousel-cafe.jpg" alt="Customers ordering at the counter of a warm, wood-beamed café"></figure>
+      <figure class="carousel__card" data-slot="right" data-photo="2" aria-hidden="true"><img src="assets/carousel-book.jpg" alt=""></figure>
+
+      <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Previous image">
+        <svg viewBox="0 0 39 39" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M.761 19.539 19.486.814l1.838 1.839L4.439 19.539l16.886 16.886-1.839 1.839L.761 19.539Z"/><path fill="currentColor" fill-rule="evenodd" d="M2.611 18.232h35.612v2.6H2.61l.001-2.6Z"/></svg>
+      </button>
+      <button class="carousel__btn carousel__btn--next" type="button" aria-label="Next image">
+        <svg viewBox="0 0 39 39" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M.761 19.539 19.486.814l1.838 1.839L4.439 19.539l16.886 16.886-1.839 1.839L.761 19.539Z"/><path fill="currentColor" fill-rule="evenodd" d="M2.611 18.232h35.612v2.6H2.61l.001-2.6Z"/></svg>
+      </button>
+
+      <p class="visually-hidden" aria-live="polite" data-carousel-status></p>
+    </section>
+
+   <div class="page">
+    <section class="drinks" aria-labelledby="drinks-title">
+      <div class="drinks__scroller">
+        <ul class="drinks__viewport" tabindex="0" aria-label="Featured drinks, scrollable">
+          <li class="drink-card">
+            <div class="drink-card__inner">
+              <div class="drink-card__face drink-card__front">
+                <img class="drink-card__art" src="assets/drink-snickerdoodle.svg" alt="" width="119" height="161">
+                <h3 class="drink-card__name">Snickerdoodle</h3>
+                <button class="drink-card__add" type="button" aria-expanded="false" aria-controls="drink-back-1" aria-label="Show Snickerdoodle ingredients"><svg viewBox="0 0 19 19" aria-hidden="true"><path fill="currentColor" d="M7.7 0h3.6v7.7H19v3.6h-7.7V19H7.7v-7.7H0V7.7h7.7z"/></svg></button>
+              </div>
+              <div class="drink-card__face drink-card__back" id="drink-back-1" inert>
+                <button class="drink-card__close" type="button" aria-label="Hide Snickerdoodle ingredients">X</button>
+                <img class="drink-card__art drink-card__art--small" src="assets/drink-snickerdoodle.svg" alt="" width="73" height="99">
+                <p class="drink-card__tag" aria-hidden="true">Snickerdoodle</p>
+                <p class="drink-card__desc">Chocolate, Caramel, Hazelnut, Vanilla, Espresso, Steamed Milk &amp; Whipped Cream with Chocolate and Caramel Drizzle</p>
+              </div>
+            </div>
+          </li>
+          <li class="drink-card">
+            <div class="drink-card__inner">
+              <div class="drink-card__face drink-card__front">
+                <img class="drink-card__art" src="assets/drink-snickerdoodle.svg" alt="" width="119" height="161">
+                <h3 class="drink-card__name">Snickerdoodle</h3>
+                <button class="drink-card__add" type="button" aria-expanded="false" aria-controls="drink-back-2" aria-label="Show Snickerdoodle ingredients"><svg viewBox="0 0 19 19" aria-hidden="true"><path fill="currentColor" d="M7.7 0h3.6v7.7H19v3.6h-7.7V19H7.7v-7.7H0V7.7h7.7z"/></svg></button>
+              </div>
+              <div class="drink-card__face drink-card__back" id="drink-back-2" inert>
+                <button class="drink-card__close" type="button" aria-label="Hide Snickerdoodle ingredients">X</button>
+                <img class="drink-card__art drink-card__art--small" src="assets/drink-snickerdoodle.svg" alt="" width="73" height="99">
+                <p class="drink-card__tag" aria-hidden="true">Snickerdoodle</p>
+                <p class="drink-card__desc">Chocolate, Caramel, Hazelnut, Vanilla, Espresso, Steamed Milk &amp; Whipped Cream with Chocolate and Caramel Drizzle</p>
+              </div>
+            </div>
+          </li>
+          <li class="drink-card">
+            <div class="drink-card__inner">
+              <div class="drink-card__face drink-card__front">
+                <img class="drink-card__art" src="assets/drink-snickerdoodle.svg" alt="" width="119" height="161">
+                <h3 class="drink-card__name">Snickerdoodle</h3>
+                <button class="drink-card__add" type="button" aria-expanded="false" aria-controls="drink-back-3" aria-label="Show Snickerdoodle ingredients"><svg viewBox="0 0 19 19" aria-hidden="true"><path fill="currentColor" d="M7.7 0h3.6v7.7H19v3.6h-7.7V19H7.7v-7.7H0V7.7h7.7z"/></svg></button>
+              </div>
+              <div class="drink-card__face drink-card__back" id="drink-back-3" inert>
+                <button class="drink-card__close" type="button" aria-label="Hide Snickerdoodle ingredients">X</button>
+                <img class="drink-card__art drink-card__art--small" src="assets/drink-snickerdoodle.svg" alt="" width="73" height="99">
+                <p class="drink-card__tag" aria-hidden="true">Snickerdoodle</p>
+                <p class="drink-card__desc">Chocolate, Caramel, Hazelnut, Vanilla, Espresso, Steamed Milk &amp; Whipped Cream with Chocolate and Caramel Drizzle</p>
+              </div>
+            </div>
+          </li>
+          <li class="drink-card">
+            <div class="drink-card__inner">
+              <div class="drink-card__face drink-card__front">
+                <img class="drink-card__art" src="assets/drink-snickerdoodle.svg" alt="" width="119" height="161">
+                <h3 class="drink-card__name">Snickerdoodle</h3>
+                <button class="drink-card__add" type="button" aria-expanded="false" aria-controls="drink-back-4" aria-label="Show Snickerdoodle ingredients"><svg viewBox="0 0 19 19" aria-hidden="true"><path fill="currentColor" d="M7.7 0h3.6v7.7H19v3.6h-7.7V19H7.7v-7.7H0V7.7h7.7z"/></svg></button>
+              </div>
+              <div class="drink-card__face drink-card__back" id="drink-back-4" inert>
+                <button class="drink-card__close" type="button" aria-label="Hide Snickerdoodle ingredients">X</button>
+                <img class="drink-card__art drink-card__art--small" src="assets/drink-snickerdoodle.svg" alt="" width="73" height="99">
+                <p class="drink-card__tag" aria-hidden="true">Snickerdoodle</p>
+                <p class="drink-card__desc">Chocolate, Caramel, Hazelnut, Vanilla, Espresso, Steamed Milk &amp; Whipped Cream with Chocolate and Caramel Drizzle</p>
+              </div>
+            </div>
+          </li>
+          <li class="drink-card">
+            <div class="drink-card__inner">
+              <div class="drink-card__face drink-card__front">
+                <img class="drink-card__art" src="assets/drink-snickerdoodle.svg" alt="" width="119" height="161">
+                <h3 class="drink-card__name">Snickerdoodle</h3>
+                <button class="drink-card__add" type="button" aria-expanded="false" aria-controls="drink-back-5" aria-label="Show Snickerdoodle ingredients"><svg viewBox="0 0 19 19" aria-hidden="true"><path fill="currentColor" d="M7.7 0h3.6v7.7H19v3.6h-7.7V19H7.7v-7.7H0V7.7h7.7z"/></svg></button>
+              </div>
+              <div class="drink-card__face drink-card__back" id="drink-back-5" inert>
+                <button class="drink-card__close" type="button" aria-label="Hide Snickerdoodle ingredients">X</button>
+                <img class="drink-card__art drink-card__art--small" src="assets/drink-snickerdoodle.svg" alt="" width="73" height="99">
+                <p class="drink-card__tag" aria-hidden="true">Snickerdoodle</p>
+                <p class="drink-card__desc">Chocolate, Caramel, Hazelnut, Vanilla, Espresso, Steamed Milk &amp; Whipped Cream with Chocolate and Caramel Drizzle</p>
+              </div>
+            </div>
+          </li>
+          <li class="drink-card">
+            <div class="drink-card__inner">
+              <div class="drink-card__face drink-card__front">
+                <img class="drink-card__art" src="assets/drink-snickerdoodle.svg" alt="" width="119" height="161">
+                <h3 class="drink-card__name">Snickerdoodle</h3>
+                <button class="drink-card__add" type="button" aria-expanded="false" aria-controls="drink-back-6" aria-label="Show Snickerdoodle ingredients"><svg viewBox="0 0 19 19" aria-hidden="true"><path fill="currentColor" d="M7.7 0h3.6v7.7H19v3.6h-7.7V19H7.7v-7.7H0V7.7h7.7z"/></svg></button>
+              </div>
+              <div class="drink-card__face drink-card__back" id="drink-back-6" inert>
+                <button class="drink-card__close" type="button" aria-label="Hide Snickerdoodle ingredients">X</button>
+                <img class="drink-card__art drink-card__art--small" src="assets/drink-snickerdoodle.svg" alt="" width="73" height="99">
+                <p class="drink-card__tag" aria-hidden="true">Snickerdoodle</p>
+                <p class="drink-card__desc">Chocolate, Caramel, Hazelnut, Vanilla, Espresso, Steamed Milk &amp; Whipped Cream with Chocolate and Caramel Drizzle</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="drinks__bar" role="slider" tabindex="0" aria-label="Scroll featured drinks"
+             aria-valuemin="1" aria-valuemax="4" aria-valuenow="1">
+          <div class="drinks__thumb"></div>
+        </div>
+      </div>
+
+      <div class="drinks__info">
+        <h2 class="drinks__title" id="drinks-title">Featured Drinks</h2>
+        <p class="drinks__text">Hand-poured coffee,<br> matcha, and botanical teas.</p>
+        <a class="btn-outline" href="beans.html">Explore Beans</a>
+      </div>
+    </section>
+
+    <section class="story" aria-labelledby="story-title">
+      <div class="story__text">
+        <h2 class="story__title" id="story-title">
+          <span class="story__title-main">Metta Coffee:</span>
+          <span class="story__title-sub">A Journey of Craft and Community</span>
+        </h2>
+        <p class="story__body">Founded in June 2020 by mother-daughter duo Amber and Amanda, Metta Coffee began as a small-batch roastery in Andover, Minnesota, named after the Buddhist practice of loving-kindness. After closing their original cafe doors due to building renovations, the duo established a vibrant permanent home inside Avant Garden in historic downtown Anoka, where they continue to serve specialty drinks and foster a creative community space.</p>
+        <a class="btn-outline" href="about.html">Learn About Us</a>
+      </div>
+      <figure class="story__media">
+        <img src="assets/about-roaster.jpg" alt="Freshly roasted coffee beans pouring out of a drum roaster into a cooling tray" width="1800" height="1199" loading="lazy">
+      </figure>
+    </section>
+   </div>
+
+    <section class="makers-band" aria-labelledby="makers-title">
+      <div class="makers-band__inner">
+        <h2 class="makers-band__title" id="makers-title">Crafted &amp; Shared Here</h2>
+        <hr class="makers-band__rule">
+        <p class="makers-band__text">At Metta Coffee, we support local creators by offering a physical home for their work. Through retail displays, pop-up showcases, and workshops, we partner with regional artisans to bring fresh art and experiences to our community.</p>
+      </div>
+    </section>
+
+    <section class="spotlight" aria-label="Artist spotlight">
+        <article class="spotlight__panel" data-artist="vv" id="artist-vv" role="tabpanel" aria-labelledby="artist-tab-vv">
+          <div class="spotlight__media" aria-roledescription="carousel" aria-label="Visibly Vector Design photos">
+            <img src="assets/artist-vv-1.jpg" alt="Illustration of a red Gibson SG electric guitar on a dotted crimson background" class="is-active" loading="lazy">
+            <img src="assets/artist-vv-2.jpg" alt="Custom-illustrated playing cards in red and blue spread around their box" loading="lazy">
+            <img src="assets/artist-vv-3.jpg" alt="Grey T-shirt with a blue and white illustrated graphic, hanging on a wall" loading="lazy">
+            <p class="spotlight__badge">Pop-up in residence</p>
+            <div class="spotlight__arrows">
+              <button class="spotlight__arrow spotlight__arrow--prev" type="button" aria-label="Previous photo"><svg viewBox="0 0 26.38 26.38" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M25.19 13.22 12.52.55l-1.24 1.24 11.42 11.43L11.28 24.64l1.24 1.24 12.67-12.66Z"/><path fill="currentColor" fill-rule="evenodd" d="M23.94 12.33H-.15v1.76h24.09v-1.76Z"/></svg></button>
+              <button class="spotlight__arrow spotlight__arrow--next" type="button" aria-label="Next photo"><svg viewBox="0 0 26.38 26.38" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M25.19 13.22 12.52.55l-1.24 1.24 11.42 11.43L11.28 24.64l1.24 1.24 12.67-12.66Z"/><path fill="currentColor" fill-rule="evenodd" d="M23.94 12.33H-.15v1.76h24.09v-1.76Z"/></svg></button>
+            </div>
+          </div>
+          <div class="spotlight__text">
+            <p class="spotlight__label">Artist spotlight:</p>
+            <h3 class="spotlight__name">Visibly Vector Design</h3>
+            <p class="spotlight__tagline">Vector illustration through pins, stickers, prints and playing cards.</p>
+            <p class="spotlight__body">Specializing in bold illustrations and clean graphic design, Visibly Vector creates small-batch vinyl stickers, enamel pins, art prints, and custom-illustrated playing cards. Blending modern vector aesthetics with nostalgic charm, the studio crafts tactile lifestyle goods designed to bring personality and storytelling to your everyday carry.</p>
+            <p class="spotlight__dates">Featured in Metta through November 30th.</p>
+          </div>
+        </article>
+        <article class="spotlight__panel" data-artist="hettie" id="artist-hettie" role="tabpanel" aria-labelledby="artist-tab-hettie" hidden>
+          <div class="spotlight__media" aria-roledescription="carousel" aria-label="Hettie’s Pottery photos">
+            <img src="assets/artist-hettie-1.jpg" alt="A smiling potter holding up a stack of glazed ceramic bowls" class="is-active" loading="lazy">
+            <img src="assets/artist-hettie-2.jpg" alt="Clay-covered hands shaping a pot on a pottery wheel" loading="lazy">
+            <img src="assets/artist-hettie-3.jpg" alt="Rows of two-tone ceramic mugs on a studio shelf" loading="lazy">
+            <div class="spotlight__arrows">
+              <button class="spotlight__arrow spotlight__arrow--prev" type="button" aria-label="Previous photo"><svg viewBox="0 0 26.38 26.38" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M25.19 13.22 12.52.55l-1.24 1.24 11.42 11.43L11.28 24.64l1.24 1.24 12.67-12.66Z"/><path fill="currentColor" fill-rule="evenodd" d="M23.94 12.33H-.15v1.76h24.09v-1.76Z"/></svg></button>
+              <button class="spotlight__arrow spotlight__arrow--next" type="button" aria-label="Next photo"><svg viewBox="0 0 26.38 26.38" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M25.19 13.22 12.52.55l-1.24 1.24 11.42 11.43L11.28 24.64l1.24 1.24 12.67-12.66Z"/><path fill="currentColor" fill-rule="evenodd" d="M23.94 12.33H-.15v1.76h24.09v-1.76Z"/></svg></button>
+            </div>
+          </div>
+          <div class="spotlight__text">
+            <p class="spotlight__label">Artist spotlight:</p>
+            <h3 class="spotlight__name">Hettie’s Pottery</h3>
+            <p class="spotlight__tagline">Hand-thrown ceramics</p>
+            <p class="spotlight__body">Specializing in hand-thrown ceramics and organic silhouettes, Hettie’s Pottery creates small-batch mugs, functional tableware, and tactile home decor. Blending earthy, grounded glazes with modern minimalist forms, the studio crafts durable everyday pieces designed to bring warmth and ritual to your daily coffee routine.</p>
+            <p class="spotlight__dates">Featured in Metta through November 25th.</p>
+          </div>
+        </article>
+        <article class="spotlight__panel" data-artist="kastonek" id="artist-kastonek" role="tabpanel" aria-labelledby="artist-tab-kastonek" hidden>
+          <div class="spotlight__media" aria-roledescription="carousel" aria-label="Kastonek Glass photos">
+            <img src="assets/artist-kastonek-1.jpg" alt="An artisan cutting lead came for a stained glass panel on a workbench" class="is-active" loading="lazy">
+            <img src="assets/artist-kastonek-2.jpg" alt="Hands holding a triangle of teal glass above a table of colorful glass pieces" loading="lazy">
+            <img src="assets/artist-kastonek-3.jpg" alt="Gloved hands soldering a stained glass panel" loading="lazy">
+            <div class="spotlight__arrows">
+              <button class="spotlight__arrow spotlight__arrow--prev" type="button" aria-label="Previous photo"><svg viewBox="0 0 26.38 26.38" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M25.19 13.22 12.52.55l-1.24 1.24 11.42 11.43L11.28 24.64l1.24 1.24 12.67-12.66Z"/><path fill="currentColor" fill-rule="evenodd" d="M23.94 12.33H-.15v1.76h24.09v-1.76Z"/></svg></button>
+              <button class="spotlight__arrow spotlight__arrow--next" type="button" aria-label="Next photo"><svg viewBox="0 0 26.38 26.38" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M25.19 13.22 12.52.55l-1.24 1.24 11.42 11.43L11.28 24.64l1.24 1.24 12.67-12.66Z"/><path fill="currentColor" fill-rule="evenodd" d="M23.94 12.33H-.15v1.76h24.09v-1.76Z"/></svg></button>
+            </div>
+          </div>
+          <div class="spotlight__text">
+            <p class="spotlight__label">Artist spotlight:</p>
+            <h3 class="spotlight__name">Kastonek Glass</h3>
+            <p class="spotlight__tagline">Hand Made Stained Glass Creations</p>
+            <p class="spotlight__body">Specializing in vibrant stained glass and modern geometric suncatchers, Kastonek Glass creates small-batch window panels, glass propagation stations, and delicate botanical decor. Blending traditional stained glass techniques with contemporary design, the studio crafts luminous home goods designed to catch the light and bring natural color into your living space.</p>
+            <p class="spotlight__dates">Featured in Metta through December 12th.</p>
+          </div>
+        </article>
+        <div class="spotlight__tabs" role="tablist" aria-label="Choose an artist">
+          <button class="btn-outline" type="button" role="tab" id="artist-tab-vv" aria-controls="artist-vv" aria-selected="true">Visibly Vector Design</button>
+          <button class="btn-outline" type="button" role="tab" id="artist-tab-hettie" aria-controls="artist-hettie" aria-selected="false" tabindex="-1">Hettie’s Pottery</button>
+          <button class="btn-outline" type="button" role="tab" id="artist-tab-kastonek" aria-controls="artist-kastonek" aria-selected="false" tabindex="-1">Kastonek Glass</button>
+        </div>
+    </section>
+
+    <section class="follow" aria-labelledby="follow-title">
+      <div class="follow__inner">
+        <div class="follow__aside">
+          <h2 class="follow__title" id="follow-title">Follow Us</h2>
+          <ul class="follow__social">
+            <li><a href="#" aria-label="Metta Coffee on Facebook"><svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><path fill="currentColor" d="M23.01 13.78c0-1.09.97-1.48 2.06-1.48s2.25.34 2.25.34l.7-4.14S26.54 8 23.01 8c-2.16 0-3.41.82-4.33 2.04-.86 1.15-.9 2.99-.9 4.18v2.71h-2.79v4.04h2.79V35h5.23V20.97h4.15l.3-4.04h-4.45v-3.15Z"/></svg></a></li>
+            <li><a href="#" aria-label="Metta Coffee on Instagram"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3"><rect x="1.5" y="1.5" width="27" height="27" rx="8"/><circle cx="15" cy="15" r="6.3"/></g><circle cx="22.6" cy="7.4" r="1.9" fill="currentColor"/></svg></a></li>
+          </ul>
+        </div>
+        <ul class="follow__feed" aria-label="Recent Instagram posts">
+          <li><a class="follow__tile" href="#" aria-label="View on Instagram: An almond croissant on a plate beside a cup illustrated with a bird"><img src="assets/insta-1.jpg" alt="An almond croissant on a plate beside a cup illustrated with a bird" style="--x:0;--y:-36;--w:212;--h:239" loading="lazy"></a></li>
+          <li><a class="follow__tile" href="#" aria-label="View on Instagram: A close-up of dark roasted coffee beans"><img src="assets/insta-2.jpg" alt="A close-up of dark roasted coffee beans" style="--x:-28;--y:-36;--w:282;--h:276" loading="lazy"></a></li>
+          <li><a class="follow__tile" href="#" aria-label="View on Instagram: Metta Coffee T-shirts and tank tops on a rack with a clearance sign"><img src="assets/insta-3.jpg" alt="Metta Coffee T-shirts and tank tops on a rack with a clearance sign" style="--x:-26;--y:-26;--w:240;--h:268" loading="lazy"></a></li>
+          <li><a class="follow__tile" href="#" aria-label="View on Instagram: Chalkboard menu for the Death drink: dark chocolate, blackberry and espresso"><img src="assets/insta-4.jpg" alt="Chalkboard menu for the Death drink: dark chocolate, blackberry and espresso" style="--x:-5;--y:-38;--w:213;--h:247" loading="lazy"></a></li>
+          <li><a class="follow__tile" href="#" aria-label="View on Instagram: Skeleton figurines posed beside candy-studded cookies"><img src="assets/insta-5.jpg" alt="Skeleton figurines posed beside candy-studded cookies" style="--x:-3;--y:-24;--w:214;--h:251" loading="lazy"></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <nav class="site-footer__nav" aria-label="Footer">
+        <ul>
+          <li style="--cx:92"><a href="makers.html">Makers</a></li>
+          <li style="--cx:425.5"><a href="cafe-menu.html">Cafe Menu</a></li>
+          <li style="--cx:750"><a href="beans.html">Beans</a></li>
+          <li style="--cx:1054"><a href="events.html">Events</a></li>
+          <li style="--cx:1359"><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <p class="site-footer__wordmark" aria-hidden="true">Metta Coffee</p>
+      <p class="site-footer__copy">© Metta Coffee 2026</p>
+      <button class="site-footer__credit" type="button" aria-expanded="false" aria-controls="site-credit">Site Credit</button>
+      <button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Dark mode">
+        <svg viewBox="0 0 169.71 78.71" aria-hidden="true">
+          <rect class="tt-track" x="18.66" y="18.14" width="151" height="42.71" rx="21.35"/>
+          <g class="tt-cup">
+            <circle class="tt-body" cx="39.36" cy="39.36" r="38.36"/>
+            <circle class="tt-body" cx="39.36" cy="39.36" r="25.55"/>
+            <circle class="tt-coffee" cx="39.36" cy="39.36" r="20.9"/>
+            <path class="tt-shine" d="M24.39 39.36C24.39 31.09 31.09 24.39 39.36 24.39"/>
+            <path class="tt-handle tt-body" d="M64.91 36.24H82.97V42.47H64.91Z"/>
+          </g>
+        </svg>
+      </button>
+    </div>
+  </footer>
+  <aside class="site-credit" id="site-credit" aria-label="Site credit" hidden>
+    <div class="site-credit__bar">
+      <div class="site-credit__inner">
+        <p class="site-credit__text">Site designed, illustrated &amp; developed by Tyler Kapustka</p>
+        <a class="site-credit__cta" href="https://www.tylerkapustka.com/" target="_blank" rel="noopener">Visibly Vector Design</a>
+        <button class="site-credit__close" type="button" aria-label="Close site credit">X</button>
+      </div>
+    </div>
+  </aside>
+
+  <script>
+    (() => {
+      /* Each photo's crop comes from the Figma file: the focal point (fx, fy, as a
+         fraction of the photo) and how far it's zoomed past "cover" (zoom). In its
+         starting slot each photo lands exactly where Figma places it. */
+      const photos = [
+        { src: "assets/carousel-latte.jpg", w: 2731, h: 4096, fx: 0.4273, fy: 0.4924, zoom: 1.1485,
+          alt: "A hand setting down a latte with leaf latte art on a wooden table" },
+        { src: "assets/carousel-cafe.jpg",  w: 2736, h: 1824, fx: 0.5650, fy: 0.4969, zoom: 1.0853,
+          alt: "Customers ordering at the counter of a warm, wood-beamed café" },
+        { src: "assets/carousel-book.jpg",  w: 2680, h: 3574, fx: 0.5169, fy: 0.5141, zoom: 1.1550,
+          alt: "An open book beside a cup of tea on a café table" },
+      ];
+
+      const root = document.querySelector(".carousel");
+      const status = root.querySelector("[data-carousel-status]");
+      const SLOT_W = { "off-left": 365, left: 365, featured: 660, right: 366, "off-right": 366 };
+      const ORDER = ["left", "featured", "right"];
+      // cards on screen, in slot order: [left, featured, right]
+      let cards = ORDER.map((slot) => root.querySelector(`.carousel__card[data-slot="${slot}"]`));
+
+      // Crop a card's photo for the slot it's in (or heading to). Sizes come from the
+      // slot's design width, not the card's current width, so mid-slide targets are right.
+      const place = (card) => {
+        const photo = photos[card.dataset.photo];
+        const img = card.querySelector("img");
+        const pw = (SLOT_W[card.dataset.slot] / 1438) * root.clientWidth;
+        const ph = root.clientHeight;
+        if (!pw || !ph) return;
+        const s = Math.max(pw / photo.w, ph / photo.h) * photo.zoom;
+        const w = photo.w * s, h = photo.h * s;
+        const left = Math.min(0, Math.max(pw - w, pw / 2 - photo.fx * w));
+        const top  = Math.min(0, Math.max(ph - h, ph / 2 - photo.fy * h));
+        Object.assign(img.style, { width: w + "px", height: h + "px", left: left + "px", top: top + "px" });
+      };
+
+      const setSlot = (card, slot) => {
+        card.dataset.slot = slot;
+        const featured = slot === "featured";
+        card.toggleAttribute("aria-hidden", !featured);
+        card.querySelector("img").alt = featured ? photos[card.dataset.photo].alt : "";
+        place(card);
+      };
+
+      const render = () => root.querySelectorAll(".carousel__card").forEach(place);
+
+      const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)");
+      const DURATION = 700;
+      let busy = false;
+
+      // dir = 1 (next): everything slides left; the left photo exits off the left edge
+      // while a copy of it slides in from the right. dir = −1 mirrors that.
+      const go = (dir) => {
+        if (busy) return;
+        const [l, f, r] = cards;
+        const leaving = dir > 0 ? l : r;
+        const entering = leaving.cloneNode(true);
+
+        if (reduceMotion.matches) {
+          leaving.remove();
+          root.insertBefore(entering, root.querySelector(".carousel__btn"));
+          if (dir > 0) { setSlot(f, "left"); setSlot(r, "featured"); setSlot(entering, "right"); cards = [f, r, entering]; }
+          else         { setSlot(l, "featured"); setSlot(f, "right"); setSlot(entering, "left"); cards = [entering, l, f]; }
+        } else {
+          busy = true;
+          // park the copy just off the opposite edge, without animating
+          setSlot(entering, dir > 0 ? "off-right" : "off-left");
+          root.insertBefore(entering, root.querySelector(".carousel__btn"));
+          entering.offsetWidth;                         // commit the parked position
+          root.classList.add("is-sliding");
+          if (dir > 0) {
+            setSlot(l, "off-left"); setSlot(f, "left"); setSlot(r, "featured"); setSlot(entering, "right");
+            cards = [f, r, entering];
+          } else {
+            setSlot(r, "off-right"); setSlot(f, "right"); setSlot(l, "featured"); setSlot(entering, "left");
+            cards = [entering, l, f];
+          }
+          setTimeout(() => {
+            root.classList.remove("is-sliding");
+            leaving.remove();
+            busy = false;
+          }, DURATION + 50);
+        }
+        status.textContent = `Showing: ${photos[cards[1].dataset.photo].alt}`;
+      };
+
+      root.querySelector(".carousel__btn--prev").addEventListener("click", () => go(-1));
+      root.querySelector(".carousel__btn--next").addEventListener("click", () => go(1));
+      root.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") go(-1);
+        if (e.key === "ArrowRight") go(1);
+      });
+
+      root.classList.add("is-cropped");
+      render();
+      new ResizeObserver(render).observe(root);
+    })();
+
+    /* ---------- Featured Drinks scroller ---------- */
+    (() => {
+      const viewport = document.querySelector(".drinks__viewport");
+      const bar = document.querySelector(".drinks__bar");
+      const thumb = bar.querySelector(".drinks__thumb");
+      const smooth = matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+
+      const step = () => {
+        const cards = viewport.children;
+        return cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : viewport.clientWidth;
+      };
+      const maxScroll = () => viewport.scrollWidth - viewport.clientWidth;
+      // number of resting positions (4 in the design: 6 cards, 3 visible)
+      const positions = () => Math.round(maxScroll() / step()) + 1;
+      const current = () => Math.round(viewport.scrollLeft / step());
+
+      const goTo = (i) => {
+        const n = positions();
+        i = Math.max(0, Math.min(n - 1, i));
+        const left = i === n - 1 ? maxScroll() : Math.min(maxScroll(), i * step());
+        viewport.scrollTo({ left, behavior: smooth });
+      };
+
+      // keep the handle in sync with the scroll position
+      const sync = () => {
+        const max = maxScroll();
+        const frac = max > 0 ? viewport.scrollLeft / max : 0;
+        const travel = bar.clientWidth - 24 - thumb.offsetWidth;
+        thumb.style.transform = `translateX(${frac * travel}px)`;
+        bar.setAttribute("aria-valuemax", positions());
+        bar.setAttribute("aria-valuenow", current() + 1);
+        bar.hidden = max <= 0;
+      };
+      viewport.addEventListener("scroll", sync, { passive: true });
+      new ResizeObserver(sync).observe(viewport);
+
+      // scroll bar: click a quarter of the track (or drag along it) to jump there
+      const zoneAt = (clientX) => {
+        const r = bar.getBoundingClientRect();
+        const frac = Math.max(0, Math.min(0.9999, (clientX - r.left) / r.width));
+        return Math.floor(frac * positions());
+      };
+      bar.addEventListener("pointerdown", (e) => {
+        bar.setPointerCapture(e.pointerId);
+        goTo(zoneAt(e.clientX));
+        const move = (ev) => goTo(zoneAt(ev.clientX));
+        const up = () => { bar.removeEventListener("pointermove", move); bar.removeEventListener("pointerup", up); };
+        bar.addEventListener("pointermove", move);
+        bar.addEventListener("pointerup", up);
+      });
+      bar.addEventListener("keydown", (e) => {
+        const keys = { ArrowLeft: -1, ArrowDown: -1, ArrowRight: 1, ArrowUp: 1 };
+        if (e.key in keys) { e.preventDefault(); goTo(current() + keys[e.key]); }
+        if (e.key === "Home") { e.preventDefault(); goTo(0); }
+        if (e.key === "End") { e.preventDefault(); goTo(positions() - 1); }
+      });
+
+      // drag the cards with a mouse (touch and trackpads scroll natively)
+      let drag = null;
+      viewport.addEventListener("pointerdown", (e) => {
+        if (e.pointerType !== "mouse" || e.button !== 0 || e.target.closest("button")) return;
+        drag = { x: e.clientX, left: viewport.scrollLeft, moved: false };
+        viewport.setPointerCapture(e.pointerId);
+      });
+      viewport.addEventListener("pointermove", (e) => {
+        if (!drag) return;
+        const dx = e.clientX - drag.x;
+        if (!drag.moved && Math.abs(dx) > 4) { drag.moved = true; viewport.classList.add("is-dragging"); }
+        if (drag.moved) viewport.scrollLeft = drag.left - dx;
+      });
+      const endDrag = () => {
+        if (!drag) return;
+        const moved = drag.moved;
+        drag = null;
+        if (!moved) return;
+        const target = Math.round(viewport.scrollLeft / step());
+        viewport.classList.remove("is-dragging");
+        goTo(target);
+      };
+      viewport.addEventListener("pointerup", endDrag);
+      viewport.addEventListener("pointercancel", endDrag);
+
+      // flip cards: "+" shows the back, "X" returns to the front
+      const flip = (card, toBack) => {
+        card.classList.toggle("is-flipped", toBack);
+        const front = card.querySelector(".drink-card__front");
+        const back = card.querySelector(".drink-card__back");
+        front.inert = toBack;
+        back.inert = !toBack;
+        card.querySelector(".drink-card__add").setAttribute("aria-expanded", toBack);
+        (toBack ? back.querySelector(".drink-card__close") : front.querySelector(".drink-card__add")).focus({ preventScroll: true });
+      };
+      viewport.addEventListener("click", (e) => {
+        const add = e.target.closest(".drink-card__add");
+        const close = e.target.closest(".drink-card__close");
+        if (add) flip(add.closest(".drink-card"), true);
+        if (close) flip(close.closest(".drink-card"), false);
+      });
+      viewport.addEventListener("keydown", (e) => {
+        const card = e.target.closest(".drink-card.is-flipped");
+        if (e.key === "Escape" && card) flip(card, false);
+      });
+
+      sync();
+    })();
+    /* ---------- Artist spotlight ---------- */
+    (() => {
+      const root = document.querySelector(".spotlight");
+      const tabs = [...root.querySelectorAll('[role="tab"]')];
+      const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      // switch artist
+      const select = (tab, focus) => {
+        tabs.forEach((t) => {
+          const on = t === tab;
+          t.setAttribute("aria-selected", on);
+          t.tabIndex = on ? 0 : -1;
+          const panel = document.getElementById(t.getAttribute("aria-controls"));
+          if (on && panel.hidden) {
+            panel.hidden = false;
+            panel.querySelectorAll("img").forEach((img) => (img.loading = "eager"));
+            if (!reduce) {
+              panel.classList.remove("is-entering");
+              panel.offsetWidth;
+              panel.classList.add("is-entering");
+            }
+          } else if (!on) {
+            panel.hidden = true;
+          }
+        });
+        if (focus) tab.focus();
+      };
+      tabs.forEach((tab, i) => {
+        tab.addEventListener("click", () => select(tab));
+        tab.addEventListener("keydown", (e) => {
+          const step = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+          if (e.key === "Home") select(tabs[0], true);
+          else if (e.key === "End") select(tabs[tabs.length - 1], true);
+          else if (step) select(tabs[(i + step + tabs.length) % tabs.length], true);
+          else return;
+          e.preventDefault();
+        });
+      });
+
+      // per-artist photo carousels: previous / next wrap through three photos
+      root.querySelectorAll(".spotlight__media").forEach((media) => {
+        const imgs = [...media.querySelectorAll("img")];
+        let i = 0;
+        const show = (n) => {
+          i = (n + imgs.length) % imgs.length;
+          imgs.forEach((img, k) => {
+            img.classList.toggle("is-active", k === i);
+            img.toggleAttribute("aria-hidden", k !== i);
+          });
+        };
+        show(0);
+        media.querySelector(".spotlight__arrow--prev").addEventListener("click", () => show(i - 1));
+        media.querySelector(".spotlight__arrow--next").addEventListener("click", () => show(i + 1));
+      });
+    })();
+  </script>
+  <script src="site.js"></script>
+</body>
+</html>

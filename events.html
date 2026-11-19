@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Events | Metta Coffee</title>
+
+  <!-- Adobe Fonts kit: FreightNeo Pro (freight-neo-pro)
+       TODO before hosting on GitHub Pages: add the github.io domain to this kit
+       at fonts.adobe.com, or switch to a font you can host yourself. -->
+
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+  <link rel="stylesheet" href="https://use.typekit.net/vyh5vho.css">
+  <!-- Open Sans: used by the drink cards' hover and back states -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    /* Apply the saved theme before the page paints (no flash). Default: the visitor's system setting. */
+    (function () {
+      try {
+        var t = localStorage.getItem("metta-theme");
+        if (!t && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) t = "dark";
+        if (t === "dark") document.documentElement.dataset.theme = "dark";
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body class="page-events">
+  <header class="site-header">
+    <div class="site-header__panel">
+      <div class="site-header__bar">
+        <a class="site-header__logo" href="index.html"><img src="assets/metta-logo.png" alt="Metta Coffee home" width="98" height="98"></a>
+        <nav aria-label="Main">
+          <ul class="site-header__pills">
+            <li><button class="nav-pill nav-pill--wander" type="button" aria-expanded="false" aria-controls="wander-menu">Wander</button></li>
+            <li><a class="nav-pill nav-pill--makers" href="makers.html">Makers</a></li>
+            <li><a class="nav-pill nav-pill--menu" href="cafe-menu.html">Cafe Menu</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="site-header__menu" id="wander-menu" hidden>
+        <ul class="site-header__extra">
+          <li><a class="nav-pill nav-pill--makers" href="makers.html">Makers</a></li>
+          <li><a class="nav-pill nav-pill--menu" href="cafe-menu.html">Cafe Menu</a></li>
+        </ul>
+        <ul class="site-header__cards">
+            <li><a class="wander-card wander-card--beans" href="beans.html"><img src="assets/nav-beans.svg" alt="" width="115" height="156"><span>Beans</span></a></li>
+            <li><a class="wander-card wander-card--events" href="events.html" aria-current="page"><img src="assets/nav-events.svg" alt="" width="198" height="115"><span>Events</span></a></li>
+            <li><a class="wander-card wander-card--story" href="about.html"><img src="assets/nav-story.svg" alt="" width="182" height="172"><span>Our Story</span></a></li>
+            <li><a class="wander-card wander-card--contact" href="contact.html"><img src="assets/nav-contact.svg" alt="" width="155" height="108"><span>Contact</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="events-hero" aria-labelledby="events-title">
+      <h1 class="events-hero__title" id="events-title">Events, Pop-Ups<br> <em>&amp; Workshops</em></h1>
+      <p class="events-hero__text">Explore our upcoming schedule of maker pop-ups, craft classes, and live sessions. Discover local creators or book our space for your next event.</p>
+      <div class="months" role="group" aria-label="Choose a month">
+        <button class="months__btn" type="button" data-month="1" aria-label="January" aria-pressed="false">01</button>
+        <button class="months__btn" type="button" data-month="2" aria-label="February" aria-pressed="false">02</button>
+        <button class="months__btn" type="button" data-month="3" aria-label="March" aria-pressed="false">03</button>
+        <button class="months__btn" type="button" data-month="4" aria-label="April" aria-pressed="false">04</button>
+        <button class="months__btn" type="button" data-month="5" aria-label="May" aria-pressed="false">05</button>
+        <button class="months__btn" type="button" data-month="6" aria-label="June" aria-pressed="false">06</button>
+        <button class="months__btn" type="button" data-month="7" aria-label="July" aria-pressed="false">07</button>
+        <button class="months__btn" type="button" data-month="8" aria-label="August" aria-pressed="false">08</button>
+        <button class="months__btn" type="button" data-month="9" aria-label="September" aria-pressed="false">09</button>
+        <button class="months__btn" type="button" data-month="10" aria-label="October" aria-pressed="false">10</button>
+        <button class="months__btn" type="button" data-month="11" aria-label="November" aria-pressed="true">11</button>
+        <button class="months__btn" type="button" data-month="12" aria-label="December" aria-pressed="false">12</button>
+      </div>
+      <ul class="event-filters" aria-label="Filter by event type">
+        <li><button class="event-filters__chip event-filters__chip--games" type="button" data-category="games" aria-pressed="false"><img src="assets/filter-games.svg" alt="" width="30" height="30"><span>Games</span></button></li>
+        <li><button class="event-filters__chip event-filters__chip--books" type="button" data-category="books" aria-pressed="false"><img src="assets/filter-books.svg" alt="" width="35" height="29"><span>Books</span></button></li>
+        <li><button class="event-filters__chip event-filters__chip--art" type="button" data-category="art" aria-pressed="false"><img src="assets/filter-art.svg" alt="" width="33" height="35"><span>Art</span></button></li>
+        <li><button class="event-filters__chip event-filters__chip--other" type="button" data-category="other" aria-pressed="false"><img src="assets/filter-other.svg" alt="" width="39" height="21"><span>Art</span></button></li>
+      </ul>
+    </section>
+
+    <section class="events" aria-labelledby="events-month">
+      <div class="events__month"><h2 id="events-month">Nov</h2></div>
+      <ul class="events__list">
+        <li data-month="11" data-category="games">
+          <article class="event" style="min-height:216px">
+            <p class="event__date"><time datetime="2026-11-06"><span class="event__day">FRI</span><span class="event__num">06</span></time></p>
+            <figure class="event__media">
+              <img src="assets/event-game.jpg" alt="Friends laughing and playing cards around a cafe table" style="left:-43.12px; top:-64.27px; width:517.92px; height:344.57px" loading="lazy">
+              <span class="event__icon"><img src="assets/event-dice.svg" alt="" width="33" height="33"></span>
+            </figure>
+            <div class="event__card">
+              <h3 class="event__title">Game Night</h3>
+              <p class="event__time">6<span class="sc">PM</span>-9<span class="sc">PM</span></p>
+              <p class="event__text" style="max-width:334px">Join us for open game night! Bring your own game, do a puzzle or craft, or let our guest game master teach you something new.</p>
+            </div>
+          </article>
+        </li>
+        <li data-month="11" data-category="books">
+          <article class="event" style="min-height:216px">
+            <p class="event__date"><time datetime="2026-11-12"><span class="event__day">TUE</span><span class="event__num">12</span></time></p>
+            <figure class="event__media">
+              <img src="assets/event-book.jpg" alt="Open books and a coffee on a wooden table" style="left:-10px; top:-42px; width:452px; height:300px" loading="lazy">
+              <span class="event__icon"><img src="assets/event-book.svg" alt="" width="35.86" height="29.73"></span>
+            </figure>
+            <div class="event__card">
+              <h3 class="event__title">Silent Reading Book Club</h3>
+              <p class="event__time">7<span class="sc">PM</span>-8<span class="sc">PM</span></p>
+              <p class="event__text" style="max-width:396px">Bring your own book, grab a pour-over or matcha, and settle in. No assigned reading, no discussion circles—just an hour of quiet, shared reading in community with fellow book lovers.</p>
+            </div>
+          </article>
+        </li>
+        <li data-month="11" data-category="art">
+          <article class="event event--compact" style="min-height:289px">
+            <p class="event__date"><time datetime="2026-11-15"><span class="event__day">THU</span><span class="event__num">15</span></time></p>
+            <figure class="event__media">
+              <img src="assets/event-draw.jpg" alt="An artist sketching a figure drawing at an easel" style="left:-45.37px; top:-28.97px; width:522.21px; height:347.42px" loading="lazy">
+              <span class="event__icon"><img src="assets/event-art.svg" alt="" width="39" height="40"></span>
+            </figure>
+            <div class="event__card">
+              <h3 class="event__title">Guided Drawing</h3>
+              <p class="event__time">6<span class="sc">PM</span>-8<span class="sc">PM</span></p>
+              <p class="event__text" style="max-width:396px">Sip, sketch, and unwind. Join our monthly figure and still-life drawing session led by local illustrators. Open to all skill levels—bring your preferred sketchbook or borrow our communal materials, grab a coffee, and draw alongside fellow creatives.</p>
+              <div class="event__actions">
+                <a class="event__register" href="#">Register</a>
+                <p class="event__price">$25 PP</p>
+              </div>
+            </div>
+          </article>
+        </li>
+      </ul>
+      <p class="events__empty" hidden>No events scheduled yet &mdash; check back soon.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <nav class="site-footer__nav" aria-label="Footer">
+        <ul>
+          <li style="--cx:92"><a href="makers.html">Makers</a></li>
+          <li style="--cx:425.5"><a href="cafe-menu.html">Cafe Menu</a></li>
+          <li style="--cx:750"><a href="beans.html">Beans</a></li>
+          <li style="--cx:1054"><a href="events.html" aria-current="page">Events</a></li>
+          <li style="--cx:1359"><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <p class="site-footer__wordmark" aria-hidden="true">Metta Coffee</p>
+      <p class="site-footer__copy">© Metta Coffee 2026</p>
+      <button class="site-footer__credit" type="button" aria-expanded="false" aria-controls="site-credit">Site Credit</button>
+      <button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Dark mode">
+        <svg viewBox="0 0 169.71 78.71" aria-hidden="true">
+          <rect class="tt-track" x="18.66" y="18.14" width="151" height="42.71" rx="21.35"/>
+          <g class="tt-cup">
+            <circle class="tt-body" cx="39.36" cy="39.36" r="38.36"/>
+            <circle class="tt-body" cx="39.36" cy="39.36" r="25.55"/>
+            <circle class="tt-coffee" cx="39.36" cy="39.36" r="20.9"/>
+            <path class="tt-shine" d="M24.39 39.36C24.39 31.09 31.09 24.39 39.36 24.39"/>
+            <path class="tt-handle tt-body" d="M64.91 36.24H82.97V42.47H64.91Z"/>
+          </g>
+        </svg>
+      </button>
+    </div>
+  </footer>
+  <aside class="site-credit" id="site-credit" aria-label="Site credit" hidden>
+    <div class="site-credit__bar">
+      <div class="site-credit__inner">
+        <p class="site-credit__text">Site designed, illustrated &amp; developed by Tyler Kapustka</p>
+        <a class="site-credit__cta" href="https://www.tylerkapustka.com/" target="_blank" rel="noopener">Visibly Vector Design</a>
+        <button class="site-credit__close" type="button" aria-label="Close site credit">X</button>
+      </div>
+    </div>
+  </aside>
+
+  <script src="site.js"></script>
+  <script>
+    /* ---------- Month picker + category filters ---------- */
+    (() => {
+      const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      const monthBtns = [...document.querySelectorAll(".months__btn")];
+      const chips = [...document.querySelectorAll(".event-filters__chip")];
+      const items = [...document.querySelectorAll(".events__list > li")];
+      const heading = document.getElementById("events-month");
+      const empty = document.querySelector(".events__empty");
+      let month = "11";
+      let category = null;
+
+      const render = () => {
+        heading.textContent = MONTHS[month - 1];
+        let shown = 0;
+        items.forEach((li) => {
+          const show = li.dataset.month === month && (!category || li.dataset.category === category);
+          li.hidden = !show;
+          if (show) shown++;
+        });
+        // keep the dividers between visible events only
+        let first = true;
+        items.forEach((li) => { if (!li.hidden) { li.style.marginTop = first ? "0" : ""; li.style.paddingTop = first ? "0" : ""; li.style.borderTop = first ? "0" : ""; first = false; } });
+        empty.hidden = shown > 0;
+      };
+
+      monthBtns.forEach((btn) => btn.addEventListener("click", () => {
+        month = btn.dataset.month;
+        monthBtns.forEach((b) => b.setAttribute("aria-pressed", b === btn));
+        render();
+      }));
+      chips.forEach((chip) => chip.addEventListener("click", () => {
+        category = category === chip.dataset.category ? null : chip.dataset.category;   // click again to clear
+        chips.forEach((c) => c.setAttribute("aria-pressed", c.dataset.category === category));
+        render();
+      }));
+      render();
+    })();
+  </script>
+</body>
+</html>

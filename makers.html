@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Makers | Metta Coffee</title>
+
+  <!-- Adobe Fonts kit: FreightNeo Pro (freight-neo-pro)
+       TODO before hosting on GitHub Pages: add the github.io domain to this kit
+       at fonts.adobe.com, or switch to a font you can host yourself. -->
+
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+  <link rel="stylesheet" href="https://use.typekit.net/vyh5vho.css">
+  <!-- Open Sans: used by the drink cards' hover and back states -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    /* Apply the saved theme before the page paints (no flash). Default: the visitor's system setting. */
+    (function () {
+      try {
+        var t = localStorage.getItem("metta-theme");
+        if (!t && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) t = "dark";
+        if (t === "dark") document.documentElement.dataset.theme = "dark";
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body class="page-makers">
+  <header class="site-header">
+    <div class="site-header__panel">
+      <div class="site-header__bar">
+        <a class="site-header__logo" href="index.html"><img src="assets/metta-logo.png" alt="Metta Coffee home" width="98" height="98"></a>
+        <nav aria-label="Main">
+          <ul class="site-header__pills">
+            <li><button class="nav-pill nav-pill--wander" type="button" aria-expanded="false" aria-controls="wander-menu">Wander</button></li>
+            <li><a class="nav-pill nav-pill--makers" href="makers.html" aria-current="page">Makers</a></li>
+            <li><a class="nav-pill nav-pill--menu" href="cafe-menu.html">Cafe Menu</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="site-header__menu" id="wander-menu" hidden>
+        <ul class="site-header__extra">
+          <li><a class="nav-pill nav-pill--makers" href="makers.html" aria-current="page">Makers</a></li>
+          <li><a class="nav-pill nav-pill--menu" href="cafe-menu.html">Cafe Menu</a></li>
+        </ul>
+        <ul class="site-header__cards">
+            <li><a class="wander-card wander-card--beans" href="beans.html"><img src="assets/nav-beans.svg" alt="" width="115" height="156"><span>Beans</span></a></li>
+            <li><a class="wander-card wander-card--events" href="events.html"><img src="assets/nav-events.svg" alt="" width="198" height="115"><span>Events</span></a></li>
+            <li><a class="wander-card wander-card--story" href="about.html"><img src="assets/nav-story.svg" alt="" width="182" height="172"><span>Our Story</span></a></li>
+            <li><a class="wander-card wander-card--contact" href="contact.html"><img src="assets/nav-contact.svg" alt="" width="155" height="108"><span>Contact</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="makers-hero" aria-labelledby="makers-title">
+      <h1 class="makers-hero__title" id="makers-title">Community, Craft,<br> <em>&amp; Collaboration</em></h1>
+      <p class="makers-hero__text">Whether you are looking to showcase your handmade goods on our retail shelves or host a pop-up market in our gallery space, we provide a physical home for independent makers to share their work with Anoka.</p>
+      <div class="makers-photos" aria-roledescription="carousel" aria-label="Photos from Metta">
+        <img class="is-active" src="assets/makers-gathering.jpg" alt="Friends laughing together over coffee at a round table in the cafe">
+        <div class="makers-photos__arrows">
+          <button class="round-arrow round-arrow--prev" type="button" aria-label="Previous photo"><svg viewBox="0 0 39 39" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M38.24 19.54 19.51.81l-1.83 1.84 16.88 16.89-16.89 16.88 1.84 1.84L38.24 19.54Z"/><path fill="currentColor" fill-rule="evenodd" d="M36.39 18.23H.78v2.6h35.61v-2.6Z"/></svg></button>
+          <button class="round-arrow round-arrow--next" type="button" aria-label="Next photo"><svg viewBox="0 0 39 39" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M38.24 19.54 19.51.81l-1.83 1.84 16.88 16.89-16.89 16.88 1.84 1.84L38.24 19.54Z"/><path fill="currentColor" fill-rule="evenodd" d="M36.39 18.23H.78v2.6h35.61v-2.6Z"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="consign" aria-labelledby="consign-title">
+      <h2 class="consign__title" id="consign-title">In-Store Retail &amp; Consignment</h2>
+      <p class="consign__text">We partner with regional makers, artists, and designers to feature small-batch goods on our shelves. From hand-thrown ceramics and stationery to pins and prints, we provide a curated physical retail space for your work to meet our community every day.</p>
+      <ul class="consign__cols">
+        <li class="consign__col consign__col--pencil">
+          <img src="assets/makers-pencil.svg" alt="" width="34" height="189">
+          <h3>Supporting Local Makers</h3>
+          <p>We believe a neighborhood coffee shop should be a platform for regional creativity. By dedicating shelf space to independent Anoka artists, we help connect our community directly with the people who craft the goods they love.</p>
+        </li>
+        <li class="consign__col consign__col--goods">
+          <img src="assets/makers-goods.svg" alt="" width="125" height="166">
+          <h3>Curated Goods We Welcome</h3>
+          <p>We partner with creators producing small-batch, tactile items. Our shelves highlight hand-thrown ceramics, fine art prints, stationery, custom enamel pins, stickers, and unique lifestyle accessories.</p>
+        </li>
+        <li class="consign__col consign__col--scale">
+          <img src="assets/makers-scale.svg" alt="" width="232" height="179">
+          <h3>How Consignment Works</h3>
+          <p>We keep things transparent with a supportive retail consignment split. Makers benefit from steady daily foot traffic and rotating seasonal display terms, while our team handles daily merchandising and customer checkouts.</p>
+        </li>
+      </ul>
+      <a class="btn-solid" href="#retail-application" data-open-dialog="retail-application" aria-haspopup="dialog">Retail Application</a>
+    </section>
+
+    <section class="host" aria-labelledby="host-title">
+      <figure class="host__media">
+        <img src="assets/makers-gathering.jpg" alt="" loading="lazy">
+      </figure>
+      <div class="host__body">
+        <h2 class="host__title" id="host-title">Host Your<br> Pop-Up or Workshop</h2>
+        <p class="host__text">Bring your craft, market, or creative class to our community hub. We offer flexible gallery booths, studio nooks, power access, and built-in local co-marketing to support independent makers and event hosts.</p>
+        <div class="host__stack" aria-roledescription="carousel" aria-label="Hosting details">
+          <article class="host-card" data-slot="0">
+            <h3>What</h3>
+            <p>Whether you want to host a painting class, poetry slam or D&amp;D night the coffee shop is available for rental.</p>
+          </article>
+          <article class="host-card" data-slot="1" aria-hidden="true">
+            <h3>When</h3>
+            <p>The shop is available for rental most days after 5pm or prior to 5pm with a buy out price.</p>
+          </article>
+          <article class="host-card" data-slot="2" aria-hidden="true">
+            <h3>Price</h3>
+            <p>Rental starts at $60 per hour depending on the complexity of your event and rental ask.</p>
+          </article>
+        </div>
+        <div class="host__arrows">
+          <button class="round-arrow round-arrow--small round-arrow--prev" type="button" aria-label="Previous detail"><svg viewBox="0 0 39 39" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M38.24 19.54 19.51.81l-1.83 1.84 16.88 16.89-16.89 16.88 1.84 1.84L38.24 19.54Z"/><path fill="currentColor" fill-rule="evenodd" d="M36.39 18.23H.78v2.6h35.61v-2.6Z"/></svg></button>
+          <button class="round-arrow round-arrow--small round-arrow--next" type="button" aria-label="Next detail"><svg viewBox="0 0 39 39" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M38.24 19.54 19.51.81l-1.83 1.84 16.88 16.89-16.89 16.88 1.84 1.84L38.24 19.54Z"/><path fill="currentColor" fill-rule="evenodd" d="M36.39 18.23H.78v2.6h35.61v-2.6Z"/></svg></button>
+        </div>
+        <a class="btn-solid" href="#">Host Application</a>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 class="faq__title" id="faq-title">Frequently Asked Questions</h2>
+      <h3 class="faq__group-title">In-Store Retail</h3>
+      <ul class="faq__list">
+        <li class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a1">Can I bring food and drink in for my event?</button>
+          <p class="faq__a" id="faq-a1" hidden>Answer coming soon.</p>
+        </li>
+        <li class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a2">Can I bring food and drink in for my event?</button>
+          <p class="faq__a" id="faq-a2" hidden>Answer coming soon.</p>
+        </li>
+        <li class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a3">Can I bring food and drink in for my event?</button>
+          <p class="faq__a" id="faq-a3" hidden>Answer coming soon.</p>
+        </li>
+      </ul>
+      <h3 class="faq__group-title">Hosting</h3>
+      <ul class="faq__list">
+        <li class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a4">Can I bring food and drink in for my event?</button>
+          <p class="faq__a" id="faq-a4" hidden>Answer coming soon.</p>
+        </li>
+        <li class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a5">Can I bring food and drink in for my event?</button>
+          <p class="faq__a" id="faq-a5" hidden>Answer coming soon.</p>
+        </li>
+        <li class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a6">Can I bring food and drink in for my event?</button>
+          <p class="faq__a" id="faq-a6" hidden>Answer coming soon.</p>
+        </li>
+        <li class="faq__item">
+          <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a7">Can I bring food and drink in for my event?</button>
+          <p class="faq__a" id="faq-a7" hidden>Answer coming soon.</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <nav class="site-footer__nav" aria-label="Footer">
+        <ul>
+          <li style="--cx:92"><a href="makers.html" aria-current="page">Makers</a></li>
+          <li style="--cx:425.5"><a href="cafe-menu.html">Cafe Menu</a></li>
+          <li style="--cx:750"><a href="beans.html">Beans</a></li>
+          <li style="--cx:1054"><a href="events.html">Events</a></li>
+          <li style="--cx:1359"><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <p class="site-footer__wordmark" aria-hidden="true">Metta Coffee</p>
+      <p class="site-footer__copy">© Metta Coffee 2026</p>
+      <button class="site-footer__credit" type="button" aria-expanded="false" aria-controls="site-credit">Site Credit</button>
+      <button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Dark mode">
+        <svg viewBox="0 0 169.71 78.71" aria-hidden="true">
+          <rect class="tt-track" x="18.66" y="18.14" width="151" height="42.71" rx="21.35"/>
+          <g class="tt-cup">
+            <circle class="tt-body" cx="39.36" cy="39.36" r="38.36"/>
+            <circle class="tt-body" cx="39.36" cy="39.36" r="25.55"/>
+            <circle class="tt-coffee" cx="39.36" cy="39.36" r="20.9"/>
+            <path class="tt-shine" d="M24.39 39.36C24.39 31.09 31.09 24.39 39.36 24.39"/>
+            <path class="tt-handle tt-body" d="M64.91 36.24H82.97V42.47H64.91Z"/>
+          </g>
+        </svg>
+      </button>
+    </div>
+  </footer>
+  <dialog class="apply-modal" id="retail-application" aria-labelledby="apply-title">
+    <form class="apply" method="dialog" novalidate>
+      <h2 class="apply__title" id="apply-title">Sell In Store Application</h2>
+      <button class="apply__close" type="button" aria-label="Close application" data-close>X</button>
+      <div class="apply__fields">
+        <div class="apply__grid">
+          <div class="field"><input class="field__input" id="ap-name" name="name" placeholder="John smith" autocomplete="name" required><label class="field__label" for="ap-name">Name</label></div>
+          <div class="field"><input class="field__input" id="ap-email" name="email" type="email" placeholder="JSmith@MettaCoffee.com" autocomplete="email" required><label class="field__label" for="ap-email">Email</label></div>
+          <div class="field"><input class="field__input" id="ap-business" name="business" placeholder="Coffee Art" autocomplete="organization"><label class="field__label" for="ap-business">Business name</label></div>
+          <div class="field"><input class="field__input" id="ap-site" name="website" type="url" placeholder="CoffeeArt.com" inputmode="url"><label class="field__label" for="ap-site">Website/shop site</label></div>
+          <div class="field"><input class="field__input" id="ap-price" name="price" placeholder="$10" inputmode="decimal"><label class="field__label" for="ap-price">Average product price</label></div>
+          <div class="field field--select">
+            <select class="field__select" id="ap-category" name="category" required>
+              <option value="" disabled selected hidden>Category</option>
+              <option>Ceramics &amp; pottery</option>
+              <option>Art prints</option>
+              <option>Stationery</option>
+              <option>Pins &amp; stickers</option>
+              <option>Lifestyle accessories</option>
+              <option>Other</option>
+            </select>
+            <label class="field__label" for="ap-category">Product category</label>
+          </div>
+          <div class="field apply__bio"><textarea class="apply__textarea" id="ap-bio" name="bio" placeholder="A few sentences describing your art and process..."></textarea><label class="field__label" for="ap-bio">Brief artist bio</label></div>
+          <div class="apply__row">
+            <div class="field apply__images">
+              <label class="upload" for="ap-images">
+                <span class="upload__thumb"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M4 16.5V18a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1.5M12 15V4m0 0L7.5 8.5M12 4l4.5 4.5"/></svg></span>
+                <span class="upload__hint" data-upload-hint>2-3 images of
+your products.</span>
+                <input id="ap-images" name="images" type="file" accept="image/*" multiple>
+              </label>
+              <span class="field__label" aria-hidden="true">Product images</span>
+            </div>
+            <div class="apply__right">
+              <div class="field field--select">
+                <select class="field__select" id="ap-display" name="display" required>
+                  <option value="" disabled selected hidden>Artwork Display</option>
+                  <option>Shelf display</option>
+                  <option>Wall / artwork display</option>
+                  <option>Table display</option>
+                  <option>Other</option>
+                </select>
+                <label class="field__label" for="ap-display">Display format</label>
+              </div>
+              <div class="apply__consign">
+                <p class="apply__consign__label" id="ap-consign-label">Consignment experience?</p>
+                <div class="apply__consign__choices" role="radiogroup" aria-labelledby="ap-consign-label">
+                  <label class="choice"><input type="radio" name="consignment" value="yes"><span>Yes</span></label>
+                  <label class="choice"><input type="radio" name="consignment" value="no"><span>No</span></label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="apply__submit" type="submit">Submit Application</button>
+      </div>
+      <p class="apply__thanks" role="status" hidden>Thanks for applying! We&rsquo;ll review your work and be in touch soon.</p>
+    </form>
+  </dialog>
+
+  <aside class="site-credit" id="site-credit" aria-label="Site credit" hidden>
+    <div class="site-credit__bar">
+      <div class="site-credit__inner">
+        <p class="site-credit__text">Site designed, illustrated &amp; developed by Tyler Kapustka</p>
+        <a class="site-credit__cta" href="https://www.tylerkapustka.com/" target="_blank" rel="noopener">Visibly Vector Design</a>
+        <button class="site-credit__close" type="button" aria-label="Close site credit">X</button>
+      </div>
+    </div>
+  </aside>
+
+  <script src="site.js"></script>
+  <script>
+    /* ---------- Hero photo carousel ---------- */
+    (() => {
+      const root = document.querySelector(".makers-photos");
+      const imgs = [...root.querySelectorAll("img")];
+      let i = 0;
+      const show = (n) => {
+        i = (n + imgs.length) % imgs.length;
+        imgs.forEach((img, k) => { img.classList.toggle("is-active", k === i); img.toggleAttribute("aria-hidden", k !== i); });
+      };
+      root.querySelector(".round-arrow--prev").addEventListener("click", () => show(i - 1));
+      root.querySelector(".round-arrow--next").addEventListener("click", () => show(i + 1));
+    })();
+
+    /* ---------- Hosting cards: What / When / Price ---------- */
+    (() => {
+      const cards = [...document.querySelectorAll(".host-card")];
+      let front = 0;
+      const render = () => cards.forEach((c, i) => {
+        const slot = (i - front + cards.length) % cards.length;
+        c.dataset.slot = slot;
+        c.toggleAttribute("aria-hidden", slot !== 0);
+      });
+      const go = (n) => { front = (n + cards.length) % cards.length; render(); };
+      document.querySelector(".host__arrows .round-arrow--prev").addEventListener("click", () => go(front - 1));
+      document.querySelector(".host__arrows .round-arrow--next").addEventListener("click", () => go(front + 1));
+      cards.forEach((c, i) => c.addEventListener("click", () => go(i)));
+    })();
+
+    /* ---------- FAQ accordions ---------- */
+    document.querySelectorAll(".faq__q").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const open = btn.getAttribute("aria-expanded") !== "true";
+        btn.setAttribute("aria-expanded", open);
+        document.getElementById(btn.getAttribute("aria-controls")).hidden = !open;
+      });
+    });
+    /* ---------- Retail application modal ---------- */
+    (() => {
+      const dialog = document.getElementById("retail-application");
+      const form = dialog.querySelector("form");
+      let opener = null;
+      document.querySelectorAll('[data-open-dialog="retail-application"]').forEach((btn) =>
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          opener = btn;
+          dialog.showModal();
+        })
+      );
+      const close = () => dialog.close();
+      dialog.querySelector("[data-close]").addEventListener("click", close);
+      dialog.addEventListener("click", (e) => { if (e.target === dialog) close(); });   // click on the backdrop
+      dialog.addEventListener("close", () => {
+        if (!form.querySelector(".apply__thanks").hidden) {   // start fresh after a submitted application
+          form.reset();
+          form.querySelector(".apply__fields").hidden = false;
+          form.querySelector(".apply__thanks").hidden = true;
+          files.dispatchEvent(new Event("change"));
+        }
+        if (opener) opener.focus();
+      });
+
+      const files = dialog.querySelector("#ap-images");
+      const hint = dialog.querySelector("[data-upload-hint]");
+      files.addEventListener("change", () => {
+        const n = files.files.length;
+        hint.textContent = n ? `${n} image${n > 1 ? "s" : ""} selected` : "2-3 images of\nyour products.";
+        hint.closest(".upload").classList.toggle("has-files", n > 0);
+      });
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        // No backend yet: show a confirmation in place of the form.
+        form.querySelector(".apply__fields").hidden = true;
+        form.querySelector(".apply__thanks").hidden = false;
+      });
+    })();
+  </script>
+</body>
+</html>
