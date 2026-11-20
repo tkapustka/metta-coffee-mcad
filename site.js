@@ -1,6 +1,6 @@
 /* Metta Coffee — shared site scripts (every page) */
 
-/* ---------- Top navigation: "Wander" menu ---------- */
+/* ---------- Top navigation: "Menu" button ---------- */
 (() => {
   const header = document.querySelector(".site-header");
   const toggle = header.querySelector(".nav-pill--wander");
@@ -20,6 +20,10 @@
   header.addEventListener("focusout", (e) => {
     if (!menu.hidden && e.relatedTarget && !header.contains(e.relatedTarget)) setOpen(false);
   });
+  // On phones the header is sticky; give it a solid bar once the page has scrolled
+  const stuck = () => header.classList.toggle("is-stuck", window.scrollY > 4);
+  window.addEventListener("scroll", stuck, { passive: true });
+  stuck();
 })();
 
 /* ---------- Site credit pop-up (opened from the footer) ---------- */
