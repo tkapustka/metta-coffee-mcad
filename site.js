@@ -69,3 +69,61 @@
   });
   sync();
 })();
+
+/* ---------- Scroll reveal: sections fade up as they come on screen ---------- */
+(() => {
+  if (!("IntersectionObserver" in window)) return;
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  // Single pieces fade up on their own; groups fade up one after another
+  const singles = [
+    // Home
+    ".about__intro", ".about__visit", ".carousel", ".drinks__scroller", ".drinks__info",
+    ".story__text", ".story__media", ".makers-band__title", ".makers-band__rule", ".makers-band__text",
+    ".spotlight", ".follow__aside",
+    // Beans
+    ".ordering__title", ".ordering__text", ".blends", ".where__media", ".where__text",
+    ".origins__title", ".origins__stage",
+    // Contact
+    ".contact-form",
+    // Events
+    ".events__month",
+    // Makers
+    ".makers-photos:not(.about-photo)", ".consign__title", ".consign__text", ".host__media", ".host__body",
+    ".faq__title", ".faq__group-title", ".faq__item",
+    // About
+    ".about-photo", ".about-story__title", ".about-story__body > p", ".about-cards", ".about-closing", ".about-ctas",
+  ];
+  const groups = [".follow__feed > li", ".beans-row > li", ".menu-grid > li", ".events__list > li", ".consign__cols > li"];
+
+  const targets = new Map();                       // element -> stagger index
+  singles.forEach((sel) => document.querySelectorAll(sel).forEach((el) => targets.set(el, 0)));
+  groups.forEach((sel) => document.querySelectorAll(sel).forEach((el) => {
+    const i = [...el.parentElement.children].indexOf(el);
+    targets.set(el, i % 4);                        // rows of up to 4 ripple left to right
+  }));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      io.unobserve(el);
+      el.classList.add("is-revealed");
+      el.addEventListener("animationend", function done(e) {
+        if (e.target !== el) return;
+        el.removeEventListener("animationend", done);
+        el.classList.remove("reveal", "is-revealed");
+        el.style.removeProperty("--reveal-i");
+      });
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+
+  targets.forEach((i, el) => {
+    const r = el.getBoundingClientRect();
+    const showing = el.offsetParent !== null && r.top < innerHeight && r.bottom > 0;
+    if (showing) return;                           // already on screen at load: leave it alone
+    el.classList.add("reveal");
+    if (i) el.style.setProperty("--reveal-i", i);
+    io.observe(el);
+  });
+})();
