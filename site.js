@@ -127,3 +127,27 @@
     io.observe(el);
   });
 })();
+
+/* ---------- Back to top: shown between the top navigation and the footer ---------- */
+(() => {
+  const btn = document.querySelector(".to-top");
+  const header = document.querySelector(".site-header");
+  if (!btn || !header) return;
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const footer = document.querySelector(".site-footer");
+  const update = () => {
+    const pastNav = window.scrollY > header.offsetHeight + 40;   // header sits at the very top of every page
+    const atFooter = footer && footer.getBoundingClientRect().top < innerHeight;
+    const show = pastNav && !atFooter;
+    btn.classList.toggle("is-shown", show);
+    btn.tabIndex = show ? 0 : -1;
+  };
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  update();
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+    const logo = header.querySelector(".site-header__logo");
+    if (logo) logo.focus({ preventScroll: true });   // keyboard users land back at the top too
+  });
+})();

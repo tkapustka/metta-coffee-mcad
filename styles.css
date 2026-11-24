@@ -2731,3 +2731,31 @@ html[data-theme="dark"] .page-about .site-header.is-open .nav-pill--menu:hover {
   from { opacity: 0; translate: 0 24px; }
   to   { opacity: 1; translate: none; }
 }
+
+/* =====================================================================
+   BACK TO TOP — floating crimson arrow, bottom right, shown once the top
+   navigation has scrolled out of view and hidden again at the footer
+   (site.js toggles .is-shown)
+   ===================================================================== */
+.to-top {
+  position: fixed; right: 24px; bottom: 24px; z-index: 55;
+  width: 64px; height: 64px; display: grid; place-items: center; padding: 0;
+  border: 2px solid var(--whiteish); border-radius: 50%; cursor: pointer;
+  background: var(--deep-crimson); color: var(--whiteish);
+  box-shadow: 0 6px 20px rgba(40, 25, 14, 0.28);
+  opacity: 0; visibility: hidden; translate: 0 16px;
+  transition: opacity 0.3s ease, translate 0.3s ease, visibility 0s linear 0.3s, background-color 0.2s ease, color 0.2s ease, scale 0.2s ease;
+}
+.to-top.is-shown { opacity: 1; visibility: visible; translate: none; transition-delay: 0s; }
+.to-top svg { width: 46%; height: 46%; display: block; rotate: -90deg; }
+.to-top:hover { background: var(--whiteish); color: var(--deep-crimson); scale: 1.06; }
+.to-top:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+html[data-theme="dark"] .to-top { box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55); }
+/* About page is crimson in light mode, so the arrow flips to cream there */
+.page-about .to-top { background: var(--whiteish); color: var(--deep-crimson); border-color: var(--whiteish); }
+.page-about .to-top:hover { background: var(--deep-crimson); color: var(--whiteish); }
+.page-about .to-top:focus-visible { outline-color: var(--whiteish); }
+html[data-theme="dark"] .page-about .to-top { background: var(--deep-crimson); color: var(--whiteish); }
+html[data-theme="dark"] .page-about .to-top:hover { background: var(--whiteish); color: var(--deep-crimson); }
+@media (max-width: 700px) { .to-top { right: 16px; bottom: 16px; width: 52px; height: 52px; } }
+@media (prefers-reduced-motion: reduce) { .to-top { transition: opacity 0.2s ease, visibility 0s linear 0.2s; translate: none; } }
