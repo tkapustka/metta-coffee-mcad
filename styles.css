@@ -370,8 +370,8 @@ body {
   border-radius: 72.784px;
   background: var(--deep-crimson);
   color: var(--warm-oat);
-  font-family: var(--font-body);
-  font-weight: 600;               /* Freight Sans Semibold */
+  font-family: var(--font-display);
+  font-weight: 400;               /* FreightNeo Book */
   font-size: 23.733px;
   line-height: 22.744px;
   text-align: center;
@@ -443,8 +443,8 @@ body {
   border-radius: 0 61.746px 61.746px 0;
   background: var(--deep-crimson);
   color: var(--warm-oat);
-  font-family: var(--font-ui);
-  font-weight: 600;
+  font-family: var(--font-display);
+  font-weight: 400;               /* FreightNeo Book, matches the front */
   font-size: 20.134px;
   line-height: 19.295px;
 }
@@ -622,6 +622,71 @@ body {
 
 /* ---------- Home Artist Spotlight (Figma node 456:8513) ---------- */
 /* Band: full width, latte, 314 tall (41 top / 15 bottom padding) */
+/* ---------- Event cards (Figma 533:41) ---------- */
+/* Three 432 × 620 cards between the story and the makers band: two events with a
+   432 × 326 photo (25px corners) and a crimson "Host, Gather" card. */
+.home-events { padding: 12px 0 90px; }          /* story's own 99px + 12 = 111 above; 90 below */
+.home-events__list {
+  display: grid; grid-template-columns: repeat(3, 432px); justify-content: space-between;
+  margin: 0; padding: 0; list-style: none;
+}
+.home-event, .home-host { min-height: 620px; border-radius: 25px; }
+.home-event {
+  display: flex; flex-direction: column; align-items: center; padding-bottom: 21px;
+  background: var(--surface); color: var(--ink); text-align: center;
+}
+.home-event__media {
+  position: relative; align-self: stretch; aspect-ratio: 432 / 326;
+  border-radius: 25px; overflow: hidden; background: var(--charcoal);
+}
+.home-event__img { position: absolute; max-width: none; display: block; }
+.home-event__img--game { left: -5.80%; top: -8.26%; width: 128.67%; height: 113.69%; object-fit: cover; }
+.home-event__img--book { left: -1.85%; top: -77.94%; width: 102.09%; height: 206.10%; }
+.home-event__title {
+  margin: 23px 16px 0;
+  font-family: var(--font-display); font-weight: 600; font-size: 44px; line-height: 55px;
+}
+.home-event__when {
+  margin: var(--date-gap, 16px) 0 0;
+  font-family: var(--font-body); font-size: 30px; line-height: 35px;
+}
+.btn-outline.home-event__cta {
+  margin-top: var(--cta-gap, 24px);
+  border-color: var(--deep-crimson); background: var(--deep-crimson); color: var(--whiteish);
+}
+.btn-outline.home-event__cta:hover { background: transparent; color: var(--accent-ink); }
+.home-host { padding: 56px 46px 37px; background: var(--deep-crimson); color: var(--whiteish); }
+.home-host__title { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 50px; line-height: 64px; white-space: nowrap; }
+.home-host__text { margin: 40px 0 0; max-width: 312px; min-height: 212px; font-family: var(--font-body); font-size: 26px; line-height: 40px; }
+.btn-outline.home-host__cta { margin-top: 30px; border-color: var(--whiteish); color: var(--whiteish); }
+.btn-outline.home-host__cta:hover { background: var(--whiteish); color: var(--deep-crimson); }
+.btn-outline.home-host__cta:focus-visible { outline-color: var(--whiteish); }
+
+@media (max-width: 1440px) {
+  .home-events__list { grid-template-columns: repeat(3, minmax(0, 432px)); column-gap: 24px; justify-content: center; }
+}
+@media (max-width: 1100px) {          /* swipe through the cards like the other card rows */
+  .home-events { padding-bottom: 72px; }
+  .home-events__list {
+    grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 432px; justify-content: start;
+    gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+  }
+  .home-events__list > li { scroll-snap-align: start; }
+}
+@media (max-width: 640px) {
+  .home-events { padding: 0 0 56px; }
+  .home-events__list { grid-auto-columns: 300px; gap: 12px; }
+  .home-event, .home-host { min-height: 0; }        /* the row stretches every card to the tallest one */
+  .home-event { padding-bottom: 28px; }
+  .home-event__title { margin-top: 18px; font-size: 32px; line-height: 38px; }
+  .home-event__when { margin-top: 8px; font-size: 22px; line-height: 28px; }
+  .btn-outline.home-event__cta { margin-top: 18px; font-size: 18px; padding: 11px 24px; }
+  .home-host { padding: 36px 28px 28px; }
+  .home-host__title { font-size: 38px; line-height: 48px; }
+  .home-host__text { margin-top: 24px; min-height: 0; font-size: 20px; line-height: 31px; }
+  .btn-outline.home-host__cta { margin-top: 24px; font-size: 18px; padding: 11px 24px; }
+}
+
 .makers-band {
   background: var(--surface);
   padding: 41px 16px 15px;

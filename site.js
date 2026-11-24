@@ -94,7 +94,7 @@
     // About
     ".about-photo", ".about-story__title", ".about-story__body > p", ".about-cards", ".about-closing", ".about-ctas",
   ];
-  const groups = [".follow__feed > li", ".beans-row > li", ".menu-grid > li", ".events__list > li", ".consign__cols > li"];
+  const groups = [".home-events__list > li", ".follow__feed > li", ".beans-row > li", ".menu-grid > li", ".events__list > li", ".consign__cols > li"];
 
   const targets = new Map();                       // element -> stagger index
   singles.forEach((sel) => document.querySelectorAll(sel).forEach((el) => targets.set(el, 0)));
